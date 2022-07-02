@@ -1,0 +1,21 @@
+package com.flightapp.exceptionhandler.utility;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.flightapp.exceptionhandler.exceptions.ResourceNotFoundException;
+import com.flightapp.exceptionhandler.exceptions.UniqueConstraintViolationException;
+import com.flightapp.exceptionhandler.model.ErrorDetails;
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+	@ExceptionHandler({ ResourceNotFoundException.class })
+	public ResponseEntity<ErrorDetails> handleException(ResourceNotFoundException e) {
+		return new ResponseEntity<>(new ErrorDetails(e.getMessage(), e.getClass().toString()), HttpStatus.OK);
+
+	}
+
+}

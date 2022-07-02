@@ -1,0 +1,12 @@
+package com.flightapp.bookingservice.service;
+
+import org.springframework.stereotype.Service;
+
+import com.flightapp.bookingservice.dto.BookingRequestDto;
+
+@Service
+public class BookingService {
+	
+	public void bookTicket(BookingRequestDto bookingRequest);
+
+}

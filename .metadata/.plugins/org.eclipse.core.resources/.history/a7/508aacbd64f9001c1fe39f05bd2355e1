@@ -1,0 +1,22 @@
+package com.flightapp.exceptionhandler.exceptions;
+
+import java.sql.SQLException;
+
+import org.hibernate.exception.ConstraintViolationException;
+
+public class UniqueConstraintViolationException extends RuntimeException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public UniqueConstraintViolationException() {
+		super();
+	}
+
+	public UniqueConstraintViolationException(String message) {
+		super(message);
+	}
+
+}

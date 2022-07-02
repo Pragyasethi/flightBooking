@@ -1,0 +1,9 @@
+package com.flightapp.bookingservice.service;
+
+import com.flightapp.bookingservice.dto.BookingRequestDto;
+
+public interface BookingService {
+	
+	public String bookTicket(BookingRequestDto bookingRequestDto);
+
+}

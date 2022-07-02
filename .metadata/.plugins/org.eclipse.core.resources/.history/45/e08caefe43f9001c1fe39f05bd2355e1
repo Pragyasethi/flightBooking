@@ -1,0 +1,50 @@
+package com.flightapp.flightservice.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightapp.flightservice.dto.AirlineRequest;
+import com.flightapp.flightservice.dto.AirlineResponse;
+import com.flightapp.flightservice.dto.FlightRequest;
+import com.flightapp.flightservice.dto.FlightResponse;
+import com.flightapp.flightservice.service.AirlineService;
+import com.flightapp.flightservice.service.FlightService;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/api/airline")
+@RequiredArgsConstructor
+public class AirlineController {
+
+	private final AirlineService airlineService;
+
+	/**
+	 * AIRLINE Related Mappings
+	 */
+	@PostMapping("/register")
+	public void registerAirline(@RequestBody AirlineRequest airlineRequest) {
+		airlineService.registerNewAirline(airlineRequest);
+
+	}
+
+	@GetMapping("/search")
+	public List<AirlineResponse> getAllAirlines() {
+		return airlineService.findAll();
+
+	}
+
+	@PutMapping("/airline/update/{airlineId}")
+	public AirlineResponse updateAirline(@PathVariable Long airlineId, @RequestBody AirlineRequest airlineRequest) {
+		return airlineService.updateAirline(airlineId, airlineRequest);
+
+	}
+
+}

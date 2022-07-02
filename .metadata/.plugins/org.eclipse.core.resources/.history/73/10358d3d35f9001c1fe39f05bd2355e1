@@ -1,0 +1,31 @@
+package com.flightapp.flightservice.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "f_flight")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Flight {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String flightNumber;
+	private Double price;
+	private Integer status;
+	@ManyToOne
+	private Airline airline;
+
+}

@@ -1,0 +1,26 @@
+package com.flightapp.bookingservice.dto;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.flightapp.bookingservice.model.PassengerDetails;
+
+import lombok.Builder;
+
+public class BookingRequestDto {
+	private Long id;
+	private String pnrNumber;
+	private String email;
+	private Long flightId;
+	private LocalDateTime bookingDate;
+	private List<PassengerDetails> passengerDetails;
+	private Integer;
+
+
+}

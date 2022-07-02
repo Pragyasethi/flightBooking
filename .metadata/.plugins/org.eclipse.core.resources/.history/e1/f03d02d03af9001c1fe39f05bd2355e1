@@ -1,0 +1,18 @@
+package com.flightapp.flightservice.dto;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class FlightResponse {
+	private String flightNumber;
+	private BigDecimal price;
+	private AirlineRequest airlineRequest;
+	private Integer status;
+
+}

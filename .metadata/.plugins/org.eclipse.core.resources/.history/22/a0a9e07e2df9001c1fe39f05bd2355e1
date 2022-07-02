@@ -1,0 +1,10 @@
+package com.flightapp.inventoryservice.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "f_inventory")
+public class Inventory {
+
+}

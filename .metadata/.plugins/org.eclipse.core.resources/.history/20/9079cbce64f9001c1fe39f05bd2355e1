@@ -1,0 +1,19 @@
+package com.flightapp.exceptionhandler.exceptions;
+
+import java.sql.SQLException;
+
+import org.hibernate.HibernateException;
+import org.hibernate.exception.ConstraintViolationException;
+
+public class UniqueConstraintViolationException extends HibernateException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public UniqueConstraintViolationException(String message, SQLException root, String constraintName) {
+		super(message, root, constraintName);
+	}
+
+}

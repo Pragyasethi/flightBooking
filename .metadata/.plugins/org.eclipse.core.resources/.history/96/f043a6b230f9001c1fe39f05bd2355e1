@@ -1,0 +1,7 @@
+package com.flightapp.inventoryservice.service.impl;
+
+import com.flightapp.inventoryservice.service.InventoryService;
+
+public class InventoryServiceImpl implements InventoryService{
+
+}

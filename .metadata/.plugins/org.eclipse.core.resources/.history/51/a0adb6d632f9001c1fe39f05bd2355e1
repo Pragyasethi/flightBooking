@@ -1,0 +1,7 @@
+package com.flightapp.inventoryservice.service;
+
+public interface InventoryService {
+
+	public boolean checkSeatAvailability(String flightId);
+
+}

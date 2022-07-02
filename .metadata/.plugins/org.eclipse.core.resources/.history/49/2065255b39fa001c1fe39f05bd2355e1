@@ -1,0 +1,10 @@
+package com.flightapp.commonmodule.utility;
+
+import java.util.regex.Pattern;
+
+public class SearchUtility {
+	
+	public static final Pattern pattern = Pattern.compile("(\\w+?)(:|<|>)(\\w+?),");
+
+
+}

@@ -1,0 +1,5 @@
+package com.flightapp.apigateway.filter;
+
+public class JwtAuthenticationFilter {
+
+}

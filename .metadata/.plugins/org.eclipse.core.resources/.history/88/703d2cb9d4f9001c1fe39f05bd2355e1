@@ -1,0 +1,10 @@
+package com.flightapp.commonmodule.utility;
+
+public class JsonUtil {
+	
+	public static String toJson(Object aClass) {
+		return new Gson().toJson(aClass);
+		
+	}
+
+}

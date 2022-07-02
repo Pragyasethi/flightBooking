@@ -1,0 +1,9 @@
+package com.flightapp.flightservice.service;
+
+import com.flightapp.flightservice.dto.FlightRequest;
+
+public interface FlightService {
+
+	void addNewFlightDetails(FlightRequest flightRequest);
+
+}

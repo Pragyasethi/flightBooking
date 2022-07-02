@@ -1,0 +1,9 @@
+package com.flightapp.flightservice.service;
+
+import com.flightapp.flightservice.dto.AirlineRequest;
+
+public interface AirlineService {
+
+	void registerNewAirline(AirlineRequest airlineRequest);
+
+}

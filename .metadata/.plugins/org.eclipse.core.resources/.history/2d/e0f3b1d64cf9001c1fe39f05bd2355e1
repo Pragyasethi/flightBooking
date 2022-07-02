@@ -1,0 +1,22 @@
+package com.flightapp.inventoryservice.model;
+
+import javax.persistence.*;
+
+import lombok.*;
+
+@Entity
+@Table(name = "f_inventory")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Inventory {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String flightId;
+	private String flightNumber;
+	@Column(columnDefinition = "integer default 1")
+	private Integer status;
+}

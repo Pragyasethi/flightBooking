@@ -1,0 +1,21 @@
+package com.flightapp.bookingservice.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightapp.bookingservice.dto.BookingRequestDto;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/booking")
+public class BookingController {
+	
+	public String bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
+		return "Ticket booked successfully";
+		
+	}
+
+}

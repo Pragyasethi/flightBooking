@@ -1,0 +1,5 @@
+package com.flightapp.bookingservice.repository;
+
+public interface BookingRepository {
+
+}

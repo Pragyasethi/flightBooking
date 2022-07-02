@@ -1,0 +1,4 @@
+eureka.instance.hostname=localhost
+#As it is a server application, we don't want to register it as a client. Therefore, false.
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false

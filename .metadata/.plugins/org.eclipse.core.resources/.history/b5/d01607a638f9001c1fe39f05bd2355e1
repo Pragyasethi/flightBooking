@@ -1,0 +1,11 @@
+package com.flightapp.flightservice.service;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.flightapp.flightservice.dto.FlightRequest;
+
+public interface FlightService {
+
+	void addNewFlightDetails(FlightRequest flightRequest);
+
+}

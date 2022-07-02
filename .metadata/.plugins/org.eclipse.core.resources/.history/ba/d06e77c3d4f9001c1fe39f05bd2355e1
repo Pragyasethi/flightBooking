@@ -1,0 +1,11 @@
+package com.flightapp.commonmodule.utility;
+
+import com.google.gson.Gson;
+
+public class JsonUtil {
+	
+	public static String toJson(Object aClass) {
+		return new Gson().toJson(aClass);	
+	}
+
+}

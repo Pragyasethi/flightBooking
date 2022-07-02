@@ -1,0 +1,20 @@
+package com.flightapp.exceptionhandler.utility;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.flightapp.exceptionhandler.exceptions.AirlineNotFoundException;
+import com.flightapp.exceptionhandler.model.ExceptionDetails;
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+	
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ExceptionDetails> handleException(AirlineNotFoundException e) {
+		return new ResponseEntity<>(new ExceptionDetails(e.getMessage(), e.getClass().toString()),HttpStatus.OK);
+		
+	}
+
+}

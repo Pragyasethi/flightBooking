@@ -1,0 +1,25 @@
+package com.flightapp.flightservice.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.flightapp.flightservice.dto.AirlineRequest;
+import com.flightapp.flightservice.model.Airline;
+import com.flightapp.flightservice.repository.AirlineRepository;
+import com.flightapp.flightservice.service.AirlineService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class AirlineServiceImpl implements AirlineService{
+	
+	private final AirlineRepository airlineRepository;
+
+	@Override
+	public void registerNewAirline(AirlineRequest airlineRequest) {
+		Airline airline = Airline.builder().airlineName(airlineRequest.getAirlineName())
+				.airlineLogo(airlineRequest.getAirlineLogo()).build();
+		
+	}
+
+}

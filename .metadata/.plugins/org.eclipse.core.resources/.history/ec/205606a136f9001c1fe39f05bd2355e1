@@ -1,0 +1,15 @@
+package com.flightapp.flightservice.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.flightapp.flightservice.repository.FlightRepository;
+import com.flightapp.flightservice.service.FlightService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class FlightServiceImpl implements FlightService{
+
+	private final FlightRepository flightRepository;
+}

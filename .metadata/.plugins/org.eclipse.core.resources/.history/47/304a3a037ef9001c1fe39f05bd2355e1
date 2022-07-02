@@ -1,0 +1,38 @@
+package com.flightapp.flightservice.utility;
+
+import javax.validation.ConstraintViolationException;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import com.flightapp.flightservice.exception.model.ApiError;
+import com.flightapp.flightservice.exceptions.ResourceNotFoundException;
+
+@ControllerAdvice
+public class GlobalCustomExceptionHandler extends ResponseEntityExceptionHandler {
+
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiError> handleResourceNotFoundException(ResourceNotFoundException e) {
+		return new ResponseEntity<>(new ApiError(e.getMessage(), e.getClass().toString()), HttpStatus.NOT_FOUND);
+
+	}
+	
+	@ExceptionHandler(ConstraintViolationException.class)
+	public ResponseEntity<ApiError> handleConstraintViolationException(ConstraintViolationException e) {
+		return new ResponseEntity<>(new ApiError(e.getMessage(), e.getClass().toString()), HttpStatus.BAD_REQUEST);
+
+	}
+	
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<ApiError> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+		return new ResponseEntity<>(new ApiError(e.getMessage(), e.getClass().toString()), HttpStatus.BAD_REQUEST);
+
+	}
+	
+	
+
+}
