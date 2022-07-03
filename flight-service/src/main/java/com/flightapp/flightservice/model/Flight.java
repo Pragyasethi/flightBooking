@@ -1,7 +1,5 @@
 package com.flightapp.flightservice.model;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +32,7 @@ public class Flight {
 	@Column(nullable = false,unique = true)
 	private String flightNumber;
 	@Column(nullable = false)
-	private BigDecimal price;
+	private Double price;
 	@Column(columnDefinition = "int default 1")
 	@Builder.Default
 	private Integer status=1;

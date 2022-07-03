@@ -63,8 +63,8 @@ public class FlightController {
 
 	}
 	
-	@DeleteMapping("/{airlineId}")
-	public ResponseEntity<?> deleteAirline(@PathVariable Long airlineId) {
+	@DeleteMapping("/airline")
+	public ResponseEntity<?> deleteAirline(@RequestParam("id") Long airlineId) {
 		return airlineService.deleteAirlineById(airlineId);
 
 	}
@@ -79,7 +79,7 @@ public class FlightController {
 	public FlightResponse addFlightDetails(@Valid @RequestBody FlightRequest flightRequest) throws ResourceNotFoundException{
 		FlightResponse response= flightService.addNewFlightDetails(flightRequest);
 		//To update the capacity in Inventory
-		kafkaTemplate.send("inventory-service", "abs", JsonUtil.toJson(response));
+		kafkaTemplate.send("FlightToInventory", "Post", JsonUtil.toJson(response));
 		return response;
 	}
 

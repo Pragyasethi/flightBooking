@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class InventoryServiceImpl implements InventoryService {
 
 	private final InventoryRepository inventoryRepository;
@@ -30,6 +31,20 @@ public class InventoryServiceImpl implements InventoryService {
 				.flightNumber(inventoryRequest.getFlightNumber()).capacity(inventoryRequest.getCapacity()).build();
 		inventoryRepository.save(inventory);
 
+	}
+
+	@Override
+	public void updateFlightCapacityForBooking(InventoryRequest request) {
+		Inventory inventory = inventoryRepository.findByFlightIdAndStatus(request.getFlightId(), StatusEnum.ACTIVE.getStatus()).orElseThrow();
+		inventory.setCapacity(inventory.getCapacity()-request.getNoOfSeats());
+		inventoryRepository.save(inventory);		
+	}
+	
+	@Override
+	public void updateFlightCapacityForCancellation(InventoryRequest request) {
+		Inventory inventory = inventoryRepository.findByFlightIdAndStatus(request.getFlightId(), StatusEnum.ACTIVE.getStatus()).orElseThrow();
+		inventory.setCapacity(inventory.getCapacity()+request.getNoOfSeats());
+		inventoryRepository.save(inventory);		
 	}
 
 }

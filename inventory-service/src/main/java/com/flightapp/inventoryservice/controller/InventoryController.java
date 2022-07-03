@@ -16,9 +16,9 @@ public class InventoryController {
 	
 	private final InventoryService inventoryService;
 	
-	@GetMapping()
-	public boolean checkAvailability(@RequestParam("flightId") String flightId,@RequestParam("seat") String seats) {
-		return inventoryService.checkSeatAvailability(flightId,Integer.parseInt(seats));
+	@GetMapping
+	public boolean checkAvailability(@RequestParam("flightId") String flightId,@RequestParam("seat") String seat) {
+		return inventoryService.checkSeatAvailability(flightId,Integer.parseInt(seat));
 		
 	}
 

@@ -16,7 +16,8 @@ public class InventoryRequest {
 	private Long id;
 	private String flightId;
 	private String flightNumber;
-	private String capacity;
-	private Integer status;
+	private Integer capacity;
+	private Integer noOfSeats;
+	private String status;
 
 }

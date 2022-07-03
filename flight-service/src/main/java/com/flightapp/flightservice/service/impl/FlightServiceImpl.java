@@ -33,8 +33,14 @@ public class FlightServiceImpl implements FlightService {
 
 
 	private FlightResponse mapToDto(Flight flight) {
-		return FlightResponse.builder().flightId(flight.getId().toString()).flightNumber(flight.getFlightNumber())
-				.price(flight.getPrice()).status(StatusEnum.fromStatus(flight.getStatus()).getStatusName()).airlineId(flight.getAirline().getId().toString())
+		return FlightResponse.builder()
+				.flightId(flight.getId().toString())
+				.flightNumber(flight.getFlightNumber())
+				.price(flight.getPrice())
+				.status(StatusEnum.fromStatus(flight.getStatus()).getStatusName())
+				.airlineId(flight.getAirline().getId().toString())
+				.airlineLogo(flight.getAirline().getAirlineLogo())
+				.airlineName(flight.getAirline().getAirlineName())
 				.build();
 	}
 

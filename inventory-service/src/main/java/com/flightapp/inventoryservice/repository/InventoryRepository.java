@@ -13,5 +13,8 @@ public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 	Optional<Inventory> findByFlightIdAndStatusAndCapacityGreaterThanEqual(String flightId, Integer status,Integer seats);
 
 	Optional<Inventory> findByFlightNumberAndStatus(String flightNumber, Integer status);
+	
+	Optional<Inventory> findByFlightIdAndStatus(String flightId, Integer status);
+
 
 }

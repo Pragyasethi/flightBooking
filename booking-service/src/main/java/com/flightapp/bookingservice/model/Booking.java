@@ -30,7 +30,7 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(nullable = false,unique = true)
-	private String pnrNumber;
+	private String pnr;
 	@Column(nullable = false)
 	private String email;
 	@Column(nullable = false)
@@ -38,8 +38,8 @@ public class Booking {
 	private LocalDateTime bookingDate;
 	private Integer noOfSeats;
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<PassengerDetails> passengerDetails;
-	@Column(columnDefinition = "int default 1")
+	private List<PassengerDetails> passengerDetails; 
+	@Column(name = "status",columnDefinition = "int default 1")
 	@Builder.Default
 	private Integer status=1;
 

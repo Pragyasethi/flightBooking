@@ -29,12 +29,26 @@ public enum StatusEnum {
 		}
 	}
 
+	private static final Map<String, StatusEnum> STATUS_NAME_MAP = new HashMap<>();
+	static {
+		for (StatusEnum type : values()) {
+			STATUS_NAME_MAP.put(type.name(), type);
+		}
+	}
+
 	public static StatusEnum fromStatus(int status) {
 		StatusEnum statusEnum = STATUS_MAP.get(status);
 		if (statusEnum == null) {
-			throw new IllegalArgumentException("No operator found with symbol: " + status);
+			throw new IllegalArgumentException("No status found with symbol: " + status);
 		}
 		return statusEnum;
 	}
 
+	public static StatusEnum fromStatus(String statusName) {
+		StatusEnum statusEnum = STATUS_NAME_MAP.get(statusName);
+		if (statusEnum == null) {
+			throw new IllegalArgumentException("No status found with name: " + statusName);
+		}
+		return statusEnum;
+	}
 }

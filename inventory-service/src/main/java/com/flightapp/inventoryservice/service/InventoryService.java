@@ -19,4 +19,16 @@ public interface InventoryService {
 	 */
 	public void saveInventoryDetails(InventoryRequest inventoryRequest);
 
+	/**
+	 * To update flight capacity after successful booking
+	 * @param request
+	 */
+	public void updateFlightCapacityForBooking(InventoryRequest request);
+	
+	/**
+	 * To update flight capacity after Cancelling booking
+	 * @param request
+	 */
+	public void updateFlightCapacityForCancellation(InventoryRequest request);
+
 }

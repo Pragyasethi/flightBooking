@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
 public class BookingRequestDto {
-	private String pnrNumber;
+	private String pnr;
 	private String email;
 	private Long flightId;
 	private Integer noOfSeats;

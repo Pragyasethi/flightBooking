@@ -30,7 +30,7 @@ public class Inventory {
 	@Column(unique = true, nullable = false)
 	private String flightNumber;
 	@Column( nullable = false)
-	private String capacity;
+	private Integer capacity;
 	@Column(columnDefinition = "int default 1")
 	@Builder.Default
 	private Integer status=1;

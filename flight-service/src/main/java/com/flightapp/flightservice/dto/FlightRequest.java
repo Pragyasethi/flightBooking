@@ -1,7 +1,5 @@
 package com.flightapp.flightservice.dto;
 
-import java.math.BigDecimal;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -21,7 +19,7 @@ public class FlightRequest {
 	@NotBlank
 	private String flightNumber;
 	@NotNull
-	private BigDecimal price;
+	private Double price;
 	@NotBlank
 	private String airlineId;
 	@NotBlank

@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(value = Include.NON_NULL)
 public class BookingResponseDto {
 	private Long id;
-	private String pnrNumber;
+	private String pnr;
 	private String email;
 	private Long flightId;
 	private String flightNumber;
@@ -29,6 +30,7 @@ public class BookingResponseDto {
 	private LocalDate departureDate;
 	private Integer noOfSeats;
 	private LocalDateTime bookingDate;
+	@JsonProperty("passengerDetails")
 	private List<PassengerDetailsDto> passengerDetailsDtoList;
 	private String status;
 

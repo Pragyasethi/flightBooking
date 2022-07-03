@@ -21,7 +21,14 @@ public interface BookingService {
 	 * @param pnr
 	 * @return
 	 */
-	public List<BookingResponseDto> getQueryResult(List<SearchCriteria> criteriaFilter);
+	public List<BookingResponseDto> getQueryResult(List<SearchCriteria> criteriaFilter,String search);
+
+	/**
+	 * To change the status to Cancelled.
+	 * @param bookingId
+	 * @return
+	 */
+	public BookingResponseDto cancelTicket(Long bookingId);
 
 
 }

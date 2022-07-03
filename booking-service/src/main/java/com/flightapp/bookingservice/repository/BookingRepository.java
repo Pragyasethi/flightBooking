@@ -9,6 +9,6 @@ import com.flightapp.bookingservice.model.Booking;
 
 public interface BookingRepository extends JpaRepository<Booking, Long>,JpaSpecificationExecutor<Booking>{
 	
-	Optional<Booking> findByPnrNumber(String pnrNumber);
+	Optional<Booking> findByPnr(String pnr);
 	
 }
