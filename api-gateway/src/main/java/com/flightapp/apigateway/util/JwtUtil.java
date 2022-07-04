@@ -22,7 +22,7 @@
 //	@Value("${jwt.token.validity:}")
 //	private Long tokenValidity;
 //
-//	private String getUsernameFromToken(String token) {
+//	public String getUsernameFromToken(String token) {
 //		return getClaimFromToken(token, Claims::getSubject);
 //	}
 //
