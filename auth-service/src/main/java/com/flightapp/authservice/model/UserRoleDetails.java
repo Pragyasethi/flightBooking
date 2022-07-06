@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Builder
 @Table(name = "UserRoleDetails")
 public class UserRoleDetails {
 	@Id
@@ -24,6 +26,8 @@ public class UserRoleDetails {
 	private Long userId;
 	@Column(nullable = false,unique = true)
 	private String username;
+	@Column(nullable = false)
+	private String email;
 	@Column(nullable = false)
 	private String password;
 	@Column(nullable = false)

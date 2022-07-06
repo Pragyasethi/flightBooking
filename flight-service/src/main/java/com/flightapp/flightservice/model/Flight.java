@@ -1,5 +1,7 @@
 package com.flightapp.flightservice.model;
 
+import java.time.LocalTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -40,5 +44,12 @@ public class Flight {
 	@JoinColumn(name="airline_id",nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Airline airline;
+	@Column(nullable = false)
+	private String source;
+	@Column(nullable = false)
+	private String destination;
+	private LocalTime deptTime;
+	private LocalTime arrTime;
+
 
 }

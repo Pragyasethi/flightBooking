@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.flightapp.authservice.dto.JwtRequest;
 import com.flightapp.authservice.model.UserRoleDetails;
 import com.flightapp.authservice.repository.UserRoleDetailsRepository;
 
@@ -26,5 +27,19 @@ public class JwtUserDetailsService implements UserDetailsService{
 		return  new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
 
+	}
+	
+	public void saveUserDetails(JwtRequest jwtRequest) {
+		userRepository.save(mapToModel(jwtRequest));
+		
+	}
+	
+	private UserRoleDetails mapToModel(JwtRequest jwtRequest) {
+		return UserRoleDetails.builder()
+				.username(jwtRequest.getUsername())
+				.password(jwtRequest.getPassword())
+				.email(jwtRequest.getEmail())
+				.role("USER")
+				.build();
 	}
 }

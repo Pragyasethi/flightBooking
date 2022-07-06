@@ -3,6 +3,7 @@ package com.flightapp.authservice.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -36,6 +37,11 @@ public class SecurityConfiguration {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    
+    @Bean
+    public AuthenticationManager getAuthenticationManager() {
+    	return super.authenticationManager;
+    }
  
  
     @Bean
@@ -43,12 +49,10 @@ public class SecurityConfiguration {
 		httpSecurity.cors().and()
 		.csrf().disable()
 			.authorizeRequests()
-				.antMatchers("/authenticate", "/greet/**").permitAll()
-				.antMatchers("/all/**").access("hasAnyRole('MANAGER','ADMIN')")
-				.antMatchers("/manager/**").access("hasRole('MANAGER')")
-				.antMatchers("/admin/**").access("hasRole('ADMIN')")
-				
-				
+				.antMatchers("/authenticate").permitAll()
+				.antMatchers("/api/flight").access("hasRole('ADMIN')")
+				.antMatchers("/api/airline").access("hasRole('ADMIN')")
+				.antMatchers("/api/booking").access("hasRole('USER')")
 				// all other requests need to be authenticated
 				.anyRequest().authenticated().and().
 				// make sure we use stateless session; session won't be used to

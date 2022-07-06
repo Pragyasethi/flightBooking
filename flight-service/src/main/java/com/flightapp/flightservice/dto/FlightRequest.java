@@ -1,10 +1,13 @@
 package com.flightapp.flightservice.dto;
 
+import java.time.LocalTime;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +28,13 @@ public class FlightRequest {
 	@NotBlank
 	private String capacity;
 	private Integer status;
-
+	private String source;
+	private String destination;
+	@JsonProperty("departureTime")
+	private LocalTime deptTime;
+	@JsonProperty("arrivalTime")
+	private LocalTime arrTime;
+	
 	public Long getAirlineIdAsLong() {
 		return Long.valueOf(this.airlineId);
 	}

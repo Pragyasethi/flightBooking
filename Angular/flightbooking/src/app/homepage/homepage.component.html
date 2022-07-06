@@ -1,0 +1,53 @@
+<div class="form-container">
+    <mat-radio-group aria-label="Select an option" class="radio">
+        <mat-radio-button value="1">One Way </mat-radio-button>
+        <mat-radio-button value="2">Round Trip </mat-radio-button>
+    </mat-radio-group>
+    <br><br>
+
+    <mat-form-field>
+        <mat-select placeholder="Source" #singleSelect>
+            <mat-option>
+                <ngx-mat-select-search></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                {{currency.text}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Destination" #singleSelect>
+            <mat-option>
+                <ngx-mat-select-search></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                {{currency.text}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Departure Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button color="warn" class="search-icon">Search</button>
+    <!-- <button mat-icon-button color="warn" aria-label="search icon">
+        <mat-icon class="search-icon">search</mat-icon>
+    </button> -->
+</div>
+
+
+
+<!-- <mat-select [formControl]="currencyCtrl" placeholder="Currency" #singleSelect>
+    <mat-option>
+      <ngx-mat-select-search [formControl]="websiteFilterCtrl"></ngx-mat-select-search>
+    </mat-option> 
+
+    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+      {{currency.text}}
+
+      
+    </mat-option>
+  </mat-select> -->

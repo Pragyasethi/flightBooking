@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +36,7 @@ public class BookingController {
 	public String bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
 		String pnr = bookingService.bookTicket(bookingRequestDto);
 		//Call Inventory through Kafka to book tickets
-		kafkaTemplate.send("BookingToInventoryBook", "Put", JsonUtil.toJson(bookingRequestDto));
+		kafkaTemplate.send("BookingToInventoryBook",JsonUtil.toJson(bookingRequestDto));
 		return "Ticket booked successfully Your PNR number is "+pnr;
 		
 	}
@@ -47,12 +47,11 @@ public class BookingController {
 		return bookingService.getQueryResult(SearchUtility.searchFilter(search),search);	
 	}
 	
-	@PutMapping
-	@ResponseStatus(HttpStatus.CREATED)
-	public String cancelTicket(@RequestParam Long bookingId) {
-		BookingResponseDto bookResponseDto = bookingService.cancelTicket(bookingId);
+	@DeleteMapping
+	public String cancelTicket(@RequestParam String pnr) {
+		BookingResponseDto bookResponseDto = bookingService.cancelTicket(pnr);
 		//Call Inventory through Kafka to book tickets
-		kafkaTemplate.send("BookingToInventoryCancel", "Put", JsonUtil.toJson(bookResponseDto));
+		kafkaTemplate.send("BookingToInventoryCancel", JsonUtil.toJson(bookResponseDto));
 		return "Booking has been cancelled for Pnr:  "+bookResponseDto.getPnr();
 		
 	}

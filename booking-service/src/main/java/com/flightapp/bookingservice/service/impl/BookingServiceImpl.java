@@ -104,10 +104,10 @@ public class BookingServiceImpl implements BookingService {
 	}
 
 	@Override
-	public BookingResponseDto cancelTicket(Long bookingId) {
+	public BookingResponseDto cancelTicket(String pnr) {
 
-		Booking booking =bookingRepository.findById(bookingId).orElseThrow(() -> new ResourceNotFoundException(
-				"Booking Details not found for Booking id " + bookingId ));
+		Booking booking =bookingRepository.findByPnr(pnr).orElseThrow(() -> new ResourceNotFoundException(
+				"Booking Details not found for pnr:  " + pnr ));
 		booking.setStatus(StatusEnum.CANCELLED.getStatus());
 		bookingRepository.save(booking);
 		return mapToDtoResponse(booking);

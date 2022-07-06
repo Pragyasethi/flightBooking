@@ -25,10 +25,10 @@ public interface BookingService {
 
 	/**
 	 * To change the status to Cancelled.
-	 * @param bookingId
+	 * @param pnr
 	 * @return
 	 */
-	public BookingResponseDto cancelTicket(Long bookingId);
+	public BookingResponseDto cancelTicket(String pnr);
 
 
 }

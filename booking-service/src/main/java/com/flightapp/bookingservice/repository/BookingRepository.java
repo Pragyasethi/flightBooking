@@ -11,4 +11,5 @@ public interface BookingRepository extends JpaRepository<Booking, Long>,JpaSpeci
 	
 	Optional<Booking> findByPnr(String pnr);
 	
+	
 }

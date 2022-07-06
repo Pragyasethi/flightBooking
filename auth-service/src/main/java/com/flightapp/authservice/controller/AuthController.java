@@ -7,6 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.flightapp.authservice.dto.JwtRequest;
@@ -17,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/auth")
 public class AuthController {
 
 	private final JwtUtil jwtUtil;
@@ -30,7 +32,6 @@ public class AuthController {
 	@PostMapping(path = "authlogin")
 	public ResponseEntity<String> login(@RequestBody JwtRequest authenticationRequest) {
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
-
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
 		String token = jwtUtil.generateToken(userDetails);
@@ -38,8 +39,9 @@ public class AuthController {
 	}
 
 	@PostMapping(path = "authregister")
-	public ResponseEntity<String> register(@RequestBody String username) {
-		return new ResponseEntity<>("Registered", HttpStatus.OK);
+	public ResponseEntity<String> register(@RequestBody JwtRequest authenticationRequest) {
+		userDetailsService.saveUserDetails(authenticationRequest);
+		return new ResponseEntity<>("Registered successfully", HttpStatus.OK);
 	}
 
 	private void authenticate(String username, String password) {

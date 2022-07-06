@@ -29,7 +29,7 @@ import com.flightapp.flightservice.service.FlightService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/flight")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class FlightController {
 
@@ -75,11 +75,11 @@ public class FlightController {
 	 * @return
 	 * @throws ResourceNotFoundException
 	 */
-	@PostMapping
+	@PostMapping("/flight")
 	public FlightResponse addFlightDetails(@Valid @RequestBody FlightRequest flightRequest) throws ResourceNotFoundException{
 		FlightResponse response= flightService.addNewFlightDetails(flightRequest);
 		//To update the capacity in Inventory
-		kafkaTemplate.send("FlightToInventory", "Post", JsonUtil.toJson(response));
+		kafkaTemplate.send("FlightToInventory",JsonUtil.toJson(response));
 		return response;
 	}
 
@@ -89,7 +89,7 @@ public class FlightController {
 	 *   ?search=id:7,price>20.
 	 * @return
 	 */
-	@GetMapping
+	@GetMapping("/flight")
 	public List<FlightResponse> getAllFlights(@RequestParam(value = "search") String search) {
 		return flightService.getQueryResult(SearchUtility.searchFilter(search));
 	}
@@ -99,7 +99,7 @@ public class FlightController {
 	 * @param flightRequest
 	 * @return
 	 */
-	@PutMapping
+	@PutMapping("/flight")
 	public FlightResponse updateFlightDetails(@RequestBody FlightRequest flightRequest) {
 		return flightService.updateFlightDetails(flightRequest);
 	}
@@ -115,7 +115,7 @@ public class FlightController {
 	 * @param flightId
 	 * @return
 	 */
-	@DeleteMapping
+	@DeleteMapping("/flight")
 	public ResponseEntity<?> deleteFlightById(@RequestParam(value = "airlineId") Long airlineId,
 			@RequestParam(value = "flightId") Long flightId) {
 		return flightService.deleteFlightByIdAndAirlineId(flightId, airlineId);

@@ -1,0 +1,34 @@
+mat-form-field.mat-form-field {
+  position: relative;
+  font-size: 16px;
+  /* color: blue;
+  background-color: rgb(211, 209, 231); 
+  border: solid 5px #c0c0ff;*/
+}
+
+.form-container{
+  /* position: relative;
+  justify-content: center;
+  align-content: center;
+   left: 50%;
+  top: 50%;
+  transform: transalate(-50%,-50%); */
+  position: fixed;
+  top: 40%;
+  left: 20%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+ .mat-form-field ~ .mat-form-field {
+  margin-left: 12px;
+} 
+
+.search-icon{
+  color: blue;
+  transform: scale(1.5);
+  margin-left: 40px;
+}

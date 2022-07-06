@@ -41,6 +41,10 @@ public class FlightServiceImpl implements FlightService {
 				.airlineId(flight.getAirline().getId().toString())
 				.airlineLogo(flight.getAirline().getAirlineLogo())
 				.airlineName(flight.getAirline().getAirlineName())
+				.destination(flight.getDestination())
+				.source(flight.getSource())
+				.deptTime(flight.getDeptTime())
+				.arrTime(flight.getArrTime())
 				.build();
 	}
 
