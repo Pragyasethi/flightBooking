@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,10 +21,12 @@ import com.flightapp.commonmodule.utility.JsonUtil;
 import com.flightapp.commonmodule.utility.SearchUtility;
 import com.flightapp.flightservice.dto.AirlineRequest;
 import com.flightapp.flightservice.dto.AirlineResponse;
+import com.flightapp.flightservice.dto.AirportResponse;
 import com.flightapp.flightservice.dto.FlightRequest;
 import com.flightapp.flightservice.dto.FlightResponse;
 import com.flightapp.flightservice.exceptions.ResourceNotFoundException;
 import com.flightapp.flightservice.service.AirlineService;
+import com.flightapp.flightservice.service.AirportService;
 import com.flightapp.flightservice.service.FlightService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,14 +34,27 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class FlightController {
 
 	private final FlightService flightService;
 	
 	private final AirlineService airlineService;
 
+	private final AirportService airportService;
+
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
+	/**
+	 * To get Airport List.
+	 * @param airlineRequest
+	 * @return
+	 */
+	@GetMapping("/airport")
+	public List<AirportResponse> getAllAirports() {
+		return airportService.findAll();
+
+	}
 	
 	/**
 	 * To register new Airline.

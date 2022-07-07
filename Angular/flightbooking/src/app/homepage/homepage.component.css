@@ -32,3 +32,25 @@ mat-form-field.mat-form-field {
   transform: scale(1.5);
   margin-left: 40px;
 }
+
+#home-header{
+  position: relative;
+  font-weight: bold;
+  /* font-size: 50px; */
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  color: rgb(88, 85, 134);
+  border: 20px;
+  top: 50px;
+  font-style: oblique;
+  text-shadow: 2px 2px #fff;
+
+}
+
+/* #header-img{
+  width: 10%;
+  height: 50px;
+  position: relative;
+
+} */
