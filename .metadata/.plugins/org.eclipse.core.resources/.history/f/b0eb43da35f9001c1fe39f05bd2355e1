@@ -1,7 +1,0 @@
-package com.flightapp.flightservice.service.impl;
-
-import com.flightapp.flightservice.service.AirlineService;
-
-public class AirlineServiceImpl implements AirlineService{
-
-}

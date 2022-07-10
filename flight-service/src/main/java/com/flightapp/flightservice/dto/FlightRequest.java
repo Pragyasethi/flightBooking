@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,12 +27,15 @@ public class FlightRequest {
 	@NotBlank
 	private String capacity;
 	private Integer status;
+	private String departureDate;
+//	@JsonProperty("schedule")
+//	private FlightScheduleDto flightScheduleDto;
+	
 	private String source;
 	private String destination;
-	@JsonProperty("departureTime")
 	private LocalTime deptTime;
-	@JsonProperty("arrivalTime")
 	private LocalTime arrTime;
+	private String scheduledfor;
 	
 	public Long getAirlineIdAsLong() {
 		return Long.valueOf(this.airlineId);

@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Airport } from '../models/airport';
 import { AirportService } from '../services/airport.service';
+import { FlightService } from '../services/flight.service';
 
 @Component({
   selector: 'app-homepage',
@@ -11,14 +13,11 @@ import { AirportService } from '../services/airport.service';
 })
 export class HomepageComponent implements OnInit {
 
-  myControl = new FormControl('');
-  filteredOptions!: Observable<String[]>;
-
 
   errorMessage: string = "";
   airportList: Airport[] = [];
 
-  constructor(private airportService: AirportService) { }
+  constructor(private flightService: FlightService, private airportService: AirportService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAllAirports();
@@ -30,6 +29,24 @@ export class HomepageComponent implements OnInit {
   //   return this.airportList.filter(airport => airport.airportLocation.toLowerCase().includes(filterValue));
   // }
 
+  onSearchSubmit(searchform: NgForm) {
+    this.flightService.searchActiveFlights(searchform)
+      .subscribe({
+        next: (res: any) => {
+          console.log(res);
+          this.goToFlightList();
+        },
+        error: (e) => {
+          console.log(e);
+          this.errorMessage = e.message;
+        }
+      })
+  }
+  goToFlightList() {
+    this.router.navigate(['/search']);
+  }
+
+  // To get list of all airports for dropdown
   findAllAirports() {
     this.airportService.findAllAirports()
       .subscribe({
@@ -44,19 +61,7 @@ export class HomepageComponent implements OnInit {
       })
   }
 
-  // title = 'angular-mat-select-app';
-
-  // selected: string="Select";
-
-  // currencies = [
-  //   { value: 'us', text: 'U.S. Dollar $' },
-  //   { value: 'euro', text: 'Euro €' },
-  //   { value: 'yen', text: 'Japanese Yen ¥' },
-  //   { value: 'pound', text: 'Pounds £' },
-  //   { value: 'inr', text: 'Indian Rupee ₹' }
-  // ];
-
-  // submitted = false;
+  //  submitted = false;
 
   // onSubmit(form: NgForm) {
   //   this.submitted = true;

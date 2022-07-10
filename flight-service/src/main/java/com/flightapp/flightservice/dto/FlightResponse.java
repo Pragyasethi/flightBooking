@@ -21,17 +21,19 @@ public class FlightResponse {
 	private String flightNumber;
 	private Double price;
 	private String airlineId;
-	private String capacity;
+	private Integer capacity;
 	private String status;
 	private String airlineName;
 	private String airlineLogo;
-	private String fromPlace;
-	private String toPlace;
 	private String source;
 	private String destination;
 	@JsonProperty("departureTime")
 	private LocalTime deptTime;
 	@JsonProperty("arrivalTime")
 	private LocalTime arrTime;
+	private String scheduledfor;
+	private Integer availableSeats;
+	//private FlightScheduleDto flightScheduleDto;
+
 
 }

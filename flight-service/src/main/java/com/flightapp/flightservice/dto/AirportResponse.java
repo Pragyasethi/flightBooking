@@ -18,6 +18,6 @@ public class AirportResponse {
 	private String airportCode;
 	private String airportLocation;
 	private String airportName;
-
+	private String status;
 
 }

@@ -1,5 +1,0 @@
-package com.flightapp.inventoryservice.service;
-
-public class InventoryServiceImpl {
-
-}

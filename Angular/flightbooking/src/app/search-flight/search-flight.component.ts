@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AirportService } from '../services/airport.service';
 
 @Component({
   selector: 'app-search-flight',
@@ -11,5 +13,6 @@ export class SearchFlightComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

@@ -1,73 +1,46 @@
 package com.flightapp.authservice.config;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.flightapp.authservice.filter.JwtRequestFilter;
-import com.flightapp.authservice.util.JwtAuthenticationEntryPoint;
- 
 @Configuration
-public class SecurityConfiguration {
- 
-	@Autowired
-	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private JwtRequestFilter jwtRequestFilter;
-  
-    @Bean
-    public JwtRequestFilter getJwtRequestFilter() {
-        return new JwtRequestFilter();
-    }
-    
-    @Bean
-    public JwtAuthenticationEntryPoint getJwtAuthenticationEntryPoint() {
-        return new JwtAuthenticationEntryPoint();
-    }
- 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-    
-    @Bean
-    public AuthenticationManager getAuthenticationManager() {
-    	return super.authenticationManager;
-    }
- 
- 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.cors().and()
-		.csrf().disable()
-			.authorizeRequests()
-				.antMatchers("/authenticate").permitAll()
-				.antMatchers("/api/flight").access("hasRole('ADMIN')")
-				.antMatchers("/api/airline").access("hasRole('ADMIN')")
-				.antMatchers("/api/booking").access("hasRole('USER')")
-				// all other requests need to be authenticated
-				.anyRequest().authenticated().and().
-				// make sure we use stateless session; session won't be used to
-				// store user's state.
-				exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//
+//	@Autowired
+//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//		// configure AuthenticationManager so that it knows from where to load
+//		// user for matching credentials
+//		// Use BCryptPasswordEncoder
+//		auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoder());
+//	}
 
-		// Add a filter to validate the tokens with every request
-		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
-		return httpSecurity.build();
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
- 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return web -> web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
-    }
- 
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+	@Override
+	protected void configure(HttpSecurity httpSecurity) throws Exception {
+		// We don't need CSRF for this example
+		httpSecurity.cors().and().csrf().disable()
+				// dont authenticate this particular request
+				.authorizeRequests().antMatchers("/api/auth/**").permitAll();
+	}
 }

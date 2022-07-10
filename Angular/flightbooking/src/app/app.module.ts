@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFlightComponent } from './search-flight/search-flight.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,16 +19,19 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AirportService } from './services/airport.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { DatePipe } from '@angular/common';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchFlightComponent,
     HeaderComponent,
     BackgroundComponent,
-    HomepageComponent
+    routingComponents,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     HttpClientModule,
     MatAutocompleteModule
   ],
-  providers: [],
+  providers: [
+    AirportService,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

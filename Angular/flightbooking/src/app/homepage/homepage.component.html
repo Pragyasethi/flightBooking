@@ -1,49 +1,48 @@
 <div>
     <!-- <img id="header-img" src="\assets\airplane-flying.jpg" alt=""> -->
     <h1 id="home-header">look . book . go</h1>
-    <form class="form-container" (ngSubmit)="onSubmit()" #searchform="ngForm">
-    <mat-radio-group aria-label="Select an option" class="radio">
-        <mat-radio-button value="1" checked="true">One Way </mat-radio-button>
-        <mat-radio-button value="2" disabled="true">Round Trip </mat-radio-button>
-    </mat-radio-group>
-    <br><br>
-    <div *ngIf="errorMessage.length>0">
-        {{errorMessage}}
-    </div>
+    <form class="form-container" (ngSubmit)="onSearchSubmit(searchform)" #searchform="ngForm">
+        <mat-radio-group aria-label="Select an option" class="radio" name="trip" >
+            <mat-radio-button value="1" checked="true">One Way </mat-radio-button>
+            <mat-radio-button value="2" disabled="true">Round Trip </mat-radio-button>
+        </mat-radio-group>
+        <br><br>
+        <div *ngIf="errorMessage.length>0">
+            {{errorMessage}}
+        </div>
 
-    <mat-form-field *ngIf="airportList.length>0"> 
-        <mat-select placeholder="Source" #singleSelect>
-            <!-- <mat-option>
-                <ngx-mat-select-search placeholderLabel="Source"></ngx-mat-select-search>
-            </mat-option> -->
+        <mat-form-field *ngIf="airportList.length>0">
+            <mat-select placeholder="Source" #singleSelect name="source" ngModel>
+                <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Source"></ngx-mat-select-search>
+                </mat-option>
 
-            <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
-                {{airport.airportLocation}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field *ngIf="airportList.length>0">
-        <mat-select placeholder="Destination" #singleSelect>
-            <!-- <mat-option>
-                <ngx-mat-select-search placeholderLabel="Destination"></ngx-mat-select-search>
-            </mat-option> -->
+                <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
+                    {{airport.airportLocation}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="airportList.length>0">
+            <mat-select placeholder="Destination" #singleSelect  name="destination" ngModel>
+                <mat-option>
+                    <ngx-mat-select-search placeholderLabel="Destination"></ngx-mat-select-search>
+                </mat-option>
 
-            <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
-                 {{airport.airportLocation}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Departure Date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <button type="submit" mat-raised-button color="warn" class="search-icon">Search</button>
-    <!-- <button mat-icon-button color="warn" aria-label="search icon">
+                <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
+                    {{airport.airportLocation}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Departure Date"  name="scheduledfor" ngModel>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="warn" class="search-icon">Search</button>
+        <!-- <button mat-icon-button color="warn" aria-label="search icon">
         <mat-icon class="search-icon">search</mat-icon>
     </button> -->
-</form>
+    </form>
 </div>
 
 

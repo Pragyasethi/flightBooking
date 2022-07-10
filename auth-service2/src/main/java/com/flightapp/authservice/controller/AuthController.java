@@ -1,0 +1,52 @@
+package com.flightapp.authservice.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightapp.authservice.dto.JwtRequest;
+import com.flightapp.authservice.service.JwtUserDetailsService;
+import com.flightapp.authservice.util.JwtUtil;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/auth")
+@CrossOrigin
+public class AuthController {
+	private JwtUtil jwtUtil;
+
+	private final JwtUserDetailsService userDetailsService;
+	
+	private final AuthenticationManager authenticationManager;
+
+	@PostMapping("/login")
+	public ResponseEntity<String> login(@RequestBody JwtRequest authenticationRequest) {
+		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+
+		String token = jwtUtil.generateToken(userDetails);
+
+		return new ResponseEntity<>(token, HttpStatus.OK);
+	}
+
+	@PostMapping("/register")
+	public ResponseEntity<String> register(@RequestBody JwtRequest authenticationRequest) {
+		userDetailsService.saveUserDetails(authenticationRequest);
+		System.out.println("Info saved...");
+
+		return new ResponseEntity<>("Registered", HttpStatus.OK);
+	}
+
+	private void authenticate(String username, String password) {
+		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+	}
+}

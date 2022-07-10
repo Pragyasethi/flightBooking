@@ -1,5 +1,0 @@
-package com.flightapp.authserver.controller;
-
-public class AuthController {
-
-}

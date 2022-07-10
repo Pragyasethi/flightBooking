@@ -1,5 +1,0 @@
-package com.flightapp.exceptionhandler.exceptions;
-
-public class AirlineNotFoundException {
-
-}

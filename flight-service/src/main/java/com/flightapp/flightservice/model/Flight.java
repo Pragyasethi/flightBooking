@@ -31,23 +31,30 @@ public class Flight {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(nullable = false,unique = true)
+	@Column(nullable = false, unique = true)
 	private String flightNumber;
 	@Column(nullable = false)
 	private Double price;
-	@Column(columnDefinition = "int default 1")
-	@Builder.Default
-	private Integer status=1;
+	private Integer capacity;
 	@ManyToOne
-	@JoinColumn(name="airline_id",nullable = false)
+	@JoinColumn(name = "airline_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Airline airline;
-	@Column(nullable = false)
+//	@OneToOne
+//	@JoinColumn(name="flightschedule_id", nullable = false)
+//	@OnDelete(action = OnDeleteAction.CASCADE)
+//	private FlightSchedule flightSchedule;
+//	@ManyToOne
+//	@JoinColumn(name = "source", nullable = false)
 	private String source;
-	@Column(nullable = false)
+//	@ManyToOne
+//	@JoinColumn(name = "destination", nullable = false)
 	private String destination;
 	private LocalTime deptTime;
 	private LocalTime arrTime;
-
+	private String scheduledfor;
+	@Column(columnDefinition = "int default 1")
+	@Builder.Default
+	private Integer status = 1;
 
 }

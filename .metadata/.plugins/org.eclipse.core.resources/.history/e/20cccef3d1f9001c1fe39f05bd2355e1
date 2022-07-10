@@ -1,5 +1,0 @@
-package com.flightapp.inventoryservice.dto;
-
-public class InventoryRequest {
-
-}

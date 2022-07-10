@@ -1,5 +1,7 @@
 package com.flightapp.inventoryservice.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,11 +29,7 @@ public class Inventory {
 	private Long id;
 	@Column(unique = true, nullable = false)
 	private String flightId;
-	@Column(unique = true, nullable = false)
-	private String flightNumber;
 	@Column( nullable = false)
-	private Integer capacity;
-	@Column(columnDefinition = "int default 1")
-	@Builder.Default
-	private Integer status=1;
+	private Integer bookedSeats;
+	private LocalDate departureDate;
 }

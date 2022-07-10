@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.flightapp.bookingservice.dto.BookingRequestDto;
 import com.flightapp.bookingservice.dto.BookingResponseDto;
+import com.flightapp.bookingservice.dto.CommonResponse;
 import com.flightapp.bookingservice.service.BookingService;
 import com.flightapp.commonmodule.utility.JsonUtil;
 import com.flightapp.commonmodule.utility.SearchUtility;
@@ -28,35 +30,88 @@ import lombok.RequiredArgsConstructor;
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class BookingController {
-	
+
 	private final BookingService bookingService;
-	
+
 	private final KafkaTemplate<String, String> kafkaTemplate;
 
-	
+	private final WebClient.Builder webClientBuilder;
+
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public String bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
 		String pnr = bookingService.bookTicket(bookingRequestDto);
-		//Call Inventory through Kafka to book tickets
-		kafkaTemplate.send("BookingToInventoryBook",JsonUtil.toJson(bookingRequestDto));
-		return "Ticket booked successfully Your PNR number is "+pnr;
-		
+		// Call Inventory through Kafka to book tickets
+		kafkaTemplate.send("BookingToInventoryBook", JsonUtil.toJson(bookingRequestDto));
+		return "Ticket booked successfully Your PNR number is " + pnr;
+
 	}
-	
+
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<BookingResponseDto> findAll(@RequestParam(value = "search") String search) {
-		return bookingService.getQueryResult(SearchUtility.searchFilter(search),search);	
+		return bookingService.getQueryResult(SearchUtility.searchFilter(search), search);
 	}
-	
+
 	@DeleteMapping
 	public String cancelTicket(@RequestParam String pnr) {
 		BookingResponseDto bookResponseDto = bookingService.cancelTicket(pnr);
-		//Call Inventory through Kafka to book tickets
+		// Call Inventory through Kafka to book tickets
 		kafkaTemplate.send("BookingToInventoryCancel", JsonUtil.toJson(bookResponseDto));
-		return "Booking has been cancelled for Pnr:  "+bookResponseDto.getPnr();
-		
+		return "Booking has been cancelled for Pnr:  " + bookResponseDto.getPnr();
+
+	}
+
+	/**
+	 * To get all flights. user can filter the search using this string in url.
+	 * ?search=source:3,destination:2,scheduledfor~monday
+	 * 
+	 * @return
+	 */
+	@GetMapping("/flight")
+	public CommonResponse[] getAllFlights(@RequestParam(value = "search") String search) {
+		return webClientBuilder.build().get()
+				.uri("http://flight-service/api/flight", uriBuilder -> uriBuilder.queryParam("search", search).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
+	}
+
+//	/**
+//	 * To get flightById.
+//	 * 
+//	 * @return
+//	 */
+//	@GetMapping("/flight/{id}")
+//	public CommonResponse getFlightById(@PathVariable Long id) {
+//		return webClientBuilder.build().get()
+//				.uri("http://flight-service/api/flight", uriBuilder -> uriBuilder.queryParam("id", id).build())
+//				.retrieve().bodyToMono(CommonResponse.class).block();
+//	}
+	
+	/**
+	 * To get Airport List. ?search=status:1
+	 * 
+	 * @param search
+	 * @return
+	 */
+	@GetMapping("/airport")
+	public CommonResponse[] getAllAirports(@RequestParam(value = "search") String search) {
+		return webClientBuilder.build().get()
+				.uri("http://flight-service/api/airport", uriBuilder -> uriBuilder.queryParam("search", search).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
+	}
+
+	/**
+	 * To get Airline List. ?search=status:1
+	 * 
+	 * @param search
+	 * @return
+	 */
+	@GetMapping("/airline")
+	public CommonResponse[] getAllAirlines(@RequestParam(value = "search") String search) {
+		return webClientBuilder.build().get()
+				.uri("http://flight-service/api/airline", uriBuilder -> uriBuilder.queryParam("search", search).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
+
 	}
 
 }

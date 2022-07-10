@@ -1,5 +1,0 @@
-package com.flightapp.inventoryservice.model;
-
-public class Inventory {
-
-}

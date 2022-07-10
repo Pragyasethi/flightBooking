@@ -1,5 +1,0 @@
-package com.flightapp.flightservice.repository;
-
-public interface AirlineRepository {
-
-}

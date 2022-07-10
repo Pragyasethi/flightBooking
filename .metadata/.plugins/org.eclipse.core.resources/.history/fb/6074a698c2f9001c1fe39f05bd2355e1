@@ -1,5 +1,0 @@
-package com.flightapp.inventoryservice.kafka;
-@Component
-  
-// Class
-public class KafkaConsumer {}

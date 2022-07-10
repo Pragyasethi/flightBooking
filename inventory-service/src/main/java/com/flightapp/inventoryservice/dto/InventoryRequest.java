@@ -1,5 +1,7 @@
 package com.flightapp.inventoryservice.dto;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -15,9 +17,7 @@ public class InventoryRequest {
 
 	private Long id;
 	private String flightId;
-	private String flightNumber;
-	private Integer capacity;
-	private Integer noOfSeats;
-	private String status;
+	private Integer bookedSeats;
+	private LocalDateTime departureDate;
 
 }

@@ -20,5 +20,10 @@ public class AirlineRequest {
 	@NotBlank
 	private String airlineLogo;
 	private Integer status;
+	
+	public Long getIdAsLong() {
+		return Long.valueOf(this.id);
+	}
+
 
 }

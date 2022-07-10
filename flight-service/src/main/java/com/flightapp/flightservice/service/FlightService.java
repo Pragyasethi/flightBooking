@@ -22,6 +22,18 @@ public interface FlightService {
 
 	ResponseEntity<?> deleteFlightByIdAndAirlineId(Long flightId, Long airlineId);
 
-	List<FlightResponse> getQueryResult(List<SearchCriteria> searchFilter);
+	List<FlightResponse> getQueryResult(List<SearchCriteria> searchFilter,String date);
+
+	ResponseEntity<String> deleteFlight(Long id);
+
+	FlightResponse findById(Long id);
+	
+	/**
+	 * To update status when airline or airport's status is changed.
+	 * @param Status
+	 * @param airportId
+	 * @param airlineId
+	 */
+	void updateStatus(Integer status, String airportId , String airlineId);
 
 }

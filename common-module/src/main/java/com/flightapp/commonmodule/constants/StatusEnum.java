@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum StatusEnum {
-	INACTIVE("Inactive", 0), ACTIVE("Active", 1), BLOCKED("Blocked", 2), CANCELLED("Cancelled", 3);
+	INACTIVE("Inactive", 0), ACTIVE("Active", 1), BLOCKED("Blocked", 2), CANCELLED("Cancelled", 3), DELETED("Deleted",4);
 
 	private final String statusName;
 	private final int status;

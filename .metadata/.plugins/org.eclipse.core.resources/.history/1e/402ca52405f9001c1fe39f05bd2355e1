@@ -1,8 +1,0 @@
-#Eureka Server's URL to be mentioned in all Clients
-eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
-
-spring.application.name=api-gateway
-
-logging.level.root=INFO
-logging.level.org.springframework.cloud.gateway=TRACE
-logging.level.org.springframework.cloud.gateway.route.RouteDefinitionLocator =INFO

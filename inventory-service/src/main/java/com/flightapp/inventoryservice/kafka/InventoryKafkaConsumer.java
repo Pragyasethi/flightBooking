@@ -22,25 +22,25 @@ public class InventoryKafkaConsumer {
 //			//System.out.println("message = " + message);
 //		}
 //	}
-	@KafkaListener(topics = "FlightToInventory", groupId = "group_id")
-	public void consumePostRequest(String recordConsumed) {
-			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
-			inventorySerivce.saveInventoryDetails(request);
-			System.out.println("message = " + recordConsumed);
-	}
+//	@KafkaListener(topics = "FlightToInventory", groupId = "group_id")
+//	public void consumePostRequest(String recordConsumed) {
+//			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
+//			inventorySerivce.saveInventoryDetails(request);
+//			System.out.println("message = " + recordConsumed);
+//	}
 	
 	@KafkaListener(topics = "BookingToInventoryBook", groupId = "group_id")
 	public void consumePutRequestForBooking(String recordConsumed) {
 			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
-			inventorySerivce.updateFlightCapacityForBooking(request);
+			inventorySerivce.updateSeatsAfterBooking(request);
 			System.out.println("message = " + recordConsumed);
 	}
 	
-	@KafkaListener(topics = "BookingToInventoryCancel", groupId = "group_id")
-	public void consumePutRequestForCancellation(String recordConsumed) {
-			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
-			inventorySerivce.updateFlightCapacityForCancellation(request);
-			System.out.println("message = " + recordConsumed);
-	}
+//	@KafkaListener(topics = "BookingToInventoryCancel", groupId = "group_id")
+//	public void consumePutRequestForCancellation(String recordConsumed) {
+//			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
+//			inventorySerivce.updateFlightCapacityForCancellation(request);
+//			System.out.println("message = " + recordConsumed);
+//	}
 
 }

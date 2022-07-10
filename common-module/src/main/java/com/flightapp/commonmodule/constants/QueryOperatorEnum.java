@@ -9,7 +9,7 @@ public enum QueryOperatorEnum {
 	NOT_EQUALS("!"),
 	GREATER_THAN(">"),
 	LESS_THAN("<"),
-	LIKE("%"),
+	LIKE("~"),
 	IN("IN");
 
 	private String symbol =null;
