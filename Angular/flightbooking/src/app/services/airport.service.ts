@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 export class AirportService {
 
 
-  host:string = "http://localhost:8090/api/airport";
+  host:string = "http://localhost:8090/api/booking/airport";
   constructor(private http:HttpClient) { }
 
   findAllAirports(){

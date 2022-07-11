@@ -31,16 +31,16 @@ public class InventoryKafkaConsumer {
 	
 	@KafkaListener(topics = "BookingToInventoryBook", groupId = "group_id")
 	public void consumePutRequestForBooking(String recordConsumed) {
+		System.out.println("message = " + recordConsumed);
 			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
 			inventorySerivce.updateSeatsAfterBooking(request);
-			System.out.println("message = " + recordConsumed);
 	}
 	
-//	@KafkaListener(topics = "BookingToInventoryCancel", groupId = "group_id")
-//	public void consumePutRequestForCancellation(String recordConsumed) {
-//			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
-//			inventorySerivce.updateFlightCapacityForCancellation(request);
-//			System.out.println("message = " + recordConsumed);
-//	}
+	@KafkaListener(topics = "BookingToInventoryCancel", groupId = "group_id")
+	public void consumePutRequestForCancellation(String recordConsumed) {
+		System.out.println("message = " + recordConsumed);
+			InventoryRequest request = JsonUtil.toObject(recordConsumed, InventoryRequest.class);
+			inventorySerivce.updateSeatsForCancellation(request);
+	}
 
 }

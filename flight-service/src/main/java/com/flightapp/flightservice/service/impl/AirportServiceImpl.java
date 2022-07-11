@@ -36,7 +36,7 @@ public class AirportServiceImpl implements AirportService {
 	private AirportResponse mapToDto(Airport airport) {
 		return AirportResponse.builder().airportId(airport.getId().toString()).airportCode(airport.getAirportCode())
 				.airportLocation(airport.getAirportLocation()).airportName(airport.getAirportName())
-				.status(airport.getStatus().toString()).build();
+				.status(StatusEnum.fromStatus(airport.getStatus()).getStatusName()).build();
 	}
 
 	private Airport mapToModel(AirportRequest airportRequest) {
@@ -83,11 +83,11 @@ public class AirportServiceImpl implements AirportService {
 	public AirportResponse updateAirportDetails(@Valid AirportRequest airportRequest) {
 		Airport fetchedAirport = airportRepository.findById(airportRequest.getIdAsLong()).orElseThrow(
 				() -> new ResourceNotFoundException("Airport Id " + airportRequest.getIdAsLong() + " Not found "));
-		airportRepository.save(mapToModel(airportRequest, fetchedAirport));
 		if (fetchedAirport.getStatus().compareTo(airportRequest.getStatus()) != 0) {
 			flightService.updateStatus(airportRequest.getStatus(), fetchedAirport.getId().toString(), null);
 		}
 
+		airportRepository.save(mapToModel(airportRequest, fetchedAirport));
 		return mapToDto(fetchedAirport);
 	}
 

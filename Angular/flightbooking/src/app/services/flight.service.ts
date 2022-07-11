@@ -8,8 +8,9 @@ import { NgForm } from '@angular/forms';
 })
 export class FlightService {
 
-  host: string = "http://localhost:8090/api/flight";
-  searchUrl: string = this.host + '?search=';
+  host: string = "http://localhost:8090/api/booking/flight?departureDate=";
+  searchUrl: string = '&search=';
+  departureDate:any;
   constructor(private http: HttpClient, private datePipe: DatePipe) { }
 
   searchActiveFlights(searchform: NgForm) {
@@ -18,6 +19,9 @@ export class FlightService {
       let value = searchform.value[key];
       if (value) {
         if ("scheduledfor".match(key)) {
+          this.departureDate =this.datePipe.transform(value, 'dd-MM-yyyy');
+          localStorage.setItem('date',this.departureDate)
+          this.host= this.host.concat(this.departureDate);
           value = this.datePipe.transform(value, 'EEEE');
           this.searchUrl = this.searchUrl.concat(key).concat('~').concat(value).concat(',');
         }else{
@@ -27,7 +31,7 @@ export class FlightService {
     })
     console.log('url is ' + this.searchUrl);
     // return this.http.get(this.searchUrl.concat('1:1'));
-    return this.http.get(this.searchUrl.concat('status:1'));
+    return this.http.get(this.host.concat(this.searchUrl).concat('status:1'));
 
   }
 }

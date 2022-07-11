@@ -11,15 +11,11 @@ public class RouterValidator {
 	private RouterValidator() {
 	}
 
-    public static final List<String> openApiEndpoints= List.of(
-            "/api/auth/",
-            "/api/booking/"
-    );
-    
+	public static final List<String> openApiEndpoints = List.of("/api/auth/", "/api/booking"
 
-    public static final Predicate<ServerHttpRequest> isSecured =
-            request -> openApiEndpoints
-                    .stream()
-                    .noneMatch(uri -> request.getURI().getPath().contains(uri));
+	);
+
+	public static final Predicate<ServerHttpRequest> isSecured = request -> openApiEndpoints.stream()
+			.noneMatch(uri -> request.getURI().getPath().contains(uri));
 
 }

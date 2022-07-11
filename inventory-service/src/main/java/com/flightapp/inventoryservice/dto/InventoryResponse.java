@@ -1,9 +1,10 @@
 package com.flightapp.inventoryservice.dto;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +19,8 @@ import lombok.NoArgsConstructor;
 public class InventoryResponse {
 
 	private Long id;
-	private String flightId;
+	private Long flightId;
 	private Integer bookedSeats;
-	private LocalDateTime departureDate;
+	private LocalDate departureDate;
 
 }

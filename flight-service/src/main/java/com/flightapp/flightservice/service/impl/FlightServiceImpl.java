@@ -1,7 +1,6 @@
 package com.flightapp.flightservice.service.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -153,19 +152,21 @@ public class FlightServiceImpl implements FlightService {
 		if (!ObjectUtils.isEmpty(date)) {
 			List<Long> flightIds = flightsList.stream().map(Flight::getId).collect(Collectors.toList());
 			InventoryResponse[] inventoryResponseList = webClientBuilder.build().get()
-					.uri("http://flight-service/api/airline", uriBuilder -> uriBuilder.queryParam("departureDate", date)
-							.queryParam("flightId", flightIds).build())
+					.uri("http://inventory-service/api/inventory", uriBuilder -> uriBuilder
+							.queryParam("departureDate", date).queryParam("flightId", flightIds).build())
 					.retrieve().bodyToMono(InventoryResponse[].class).block();
 
-			for (FlightResponse flightResponse : flightResponseList) {
-				for (InventoryResponse inventoryResponse : inventoryResponseList) {
-					if (Objects.equals(flightResponse.getFlightId(), inventoryResponse.getFlightId())) {
-						flightResponse
-								.setAvailableSeats(flightResponse.getCapacity() - inventoryResponse.getBookedSeats());
-						break;
+			if (inventoryResponseList!=null && inventoryResponseList.length>0) {
+				for (FlightResponse flightResponse : flightResponseList) {
+					for (InventoryResponse inventoryResponse : inventoryResponseList) {
+						if (Objects.equals(flightResponse.getFlightId(), inventoryResponse.getFlightId())) {
+							flightResponse.setAvailableSeats(
+									flightResponse.getCapacity() - inventoryResponse.getBookedSeats());
+							break;
+						}
 					}
-				}
 
+				}
 			}
 //			return flightResponseList.stream()
 //					.filter(flightResponse -> Arrays.stream(inventoryResponseList)
@@ -196,10 +197,10 @@ public class FlightServiceImpl implements FlightService {
 	@Override
 	public void updateStatus(Integer status, String airportId, String airlineId) {
 		List<Flight> flightList = new ArrayList<>();
-		if (ObjectUtils.isEmpty(airportId)) {
+		if (!ObjectUtils.isEmpty(airportId)) {
 			flightList = flightRepository.findAllBySourceOrDestination(airportId, airportId);
 		}
-		if (ObjectUtils.isEmpty(airlineId)) {
+		if (!ObjectUtils.isEmpty(airlineId)) {
 			flightList = flightRepository.findAllByAirlineId(Long.valueOf(airlineId));
 		}
 		flightList.forEach(flight -> flight.setStatus(status));

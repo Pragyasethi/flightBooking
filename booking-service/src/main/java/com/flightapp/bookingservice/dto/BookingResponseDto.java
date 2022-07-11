@@ -27,12 +27,14 @@ public class BookingResponseDto {
 	private String flightNumber;
 	private String fromCity;
 	private String toCity;
-	private LocalDate departureDate;
+	private String departureDate;
 	private Integer noOfSeats;
 	private LocalDateTime bookingDate;
 	@JsonProperty("passengerDetails")
 	private List<PassengerDetailsDto> passengerDetailsDtoList;
 	private String status;
 
+	
+	
 
 }

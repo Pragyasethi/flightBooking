@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/booking")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 
 public class BookingController {
 
@@ -69,9 +69,9 @@ public class BookingController {
 	 * @return
 	 */
 	@GetMapping("/flight")
-	public CommonResponse[] getAllFlights(@RequestParam(value = "search") String search) {
+	public CommonResponse[] getAllFlights(@RequestParam(value = "search") String search, @RequestParam(value="departureDate") String date) {
 		return webClientBuilder.build().get()
-				.uri("http://flight-service/api/flight", uriBuilder -> uriBuilder.queryParam("search", search).build())
+				.uri("http://flight-service/api/flight", uriBuilder -> uriBuilder.queryParam("search", search).queryParam("departureDate", date).build())
 				.retrieve().bodyToMono(CommonResponse[].class).block();
 	}
 

@@ -29,11 +29,11 @@ public interface InventoryService {
 	 */
 	public void updateSeatsAfterBooking(InventoryRequest request);
 	
-//	/**
-//	 * To update flight capacity after Cancelling booking
-//	 * @param request
-//	 */
-//	public void updateFlightCapacityForCancellation(InventoryRequest request);
+	/**
+	 * To update flight capacity after Cancelling booking
+	 * @param request
+	 */
+	public void updateSeatsForCancellation(InventoryRequest request);
 
 	public List<InventoryResponse> fetchFlightInventory(List<Long> flightIds, String date) throws ParseException;
 

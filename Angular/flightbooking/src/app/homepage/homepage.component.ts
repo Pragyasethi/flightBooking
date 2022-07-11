@@ -3,6 +3,7 @@ import { FormControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Airport } from '../models/airport';
+import { Flight } from '../models/flight';
 import { AirportService } from '../services/airport.service';
 import { FlightService } from '../services/flight.service';
 
@@ -16,6 +17,7 @@ export class HomepageComponent implements OnInit {
 
   errorMessage: string = "";
   airportList: Airport[] = [];
+  flightList: Flight[] = [];
 
   constructor(private flightService: FlightService, private airportService: AirportService, private router: Router) { }
 
@@ -33,7 +35,9 @@ export class HomepageComponent implements OnInit {
     this.flightService.searchActiveFlights(searchform)
       .subscribe({
         next: (res: any) => {
-          console.log(res);
+          this.flightList=res;
+          console.log(this.flightList);
+
           this.goToFlightList();
         },
         error: (e) => {
@@ -43,6 +47,7 @@ export class HomepageComponent implements OnInit {
       })
   }
   goToFlightList() {
+    localStorage.setItem("flightList",JSON.stringify(this.flightList));
     this.router.navigate(['/search']);
   }
 

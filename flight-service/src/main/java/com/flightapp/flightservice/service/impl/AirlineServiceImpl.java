@@ -104,11 +104,11 @@ public class AirlineServiceImpl implements AirlineService {
 	public AirlineResponse updateAirlineDetails(@Valid AirlineRequest airlineRequest) {
 		Airline fetchedAirline = airlineRepository.findById(airlineRequest.getIdAsLong()).orElseThrow(() -> new ResourceNotFoundException(
 				"Airline Id " + airlineRequest.getIdAsLong() + " Not found "));
-		airlineRepository.save(mapToModel(airlineRequest,fetchedAirline));	
 		
 		if (fetchedAirline.getStatus().compareTo(airlineRequest.getStatus()) != 0) {
 			flightService.updateStatus(airlineRequest.getStatus(), null, fetchedAirline.getId().toString());
 		}
+		airlineRepository.save(mapToModel(airlineRequest,fetchedAirline));	
 
 		return mapToDto(fetchedAirline);
 	}

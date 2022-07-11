@@ -1,9 +1,10 @@
 export class Flight {
-    flightId!: string;
+    flightId!: number;
     flightNumber!: string;
     price!: string;
     source!: string;
     destination!: string;
-    deptTime!: string;
-    arrTime!: string;
+    departureTime!: string;
+    arrivalTime!: string;
+    availableSeats!:number;
 }

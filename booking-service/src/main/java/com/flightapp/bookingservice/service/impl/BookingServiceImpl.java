@@ -9,18 +9,18 @@ import java.util.stream.Collectors;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.flightapp.bookingservice.dto.BookingRequestDto;
 import com.flightapp.bookingservice.dto.BookingResponseDto;
+import com.flightapp.bookingservice.dto.CommonResponse;
 import com.flightapp.bookingservice.dto.PassengerDetailsDto;
 import com.flightapp.bookingservice.model.Booking;
 import com.flightapp.bookingservice.model.PassengerDetails;
 import com.flightapp.bookingservice.repository.BookingRepository;
 import com.flightapp.bookingservice.service.BookingService;
+import com.flightapp.commonmodule.constants.Constants;
 import com.flightapp.commonmodule.constants.StatusEnum;
 import com.flightapp.commonmodule.model.SearchCriteria;
 import com.flightapp.commonmodule.specifications.SpecificationBuilder;
@@ -52,14 +52,13 @@ public class BookingServiceImpl implements BookingService {
 
 		// Call Inventory Service to check Seats availability at the time of booking.
 
-		MultiValueMap<String, String> requestParamMap = new LinkedMultiValueMap<>();
-		requestParamMap.add("flightId", String.valueOf(bookingRequestDto.getFlightId()));
-		requestParamMap.add("seat", String.valueOf(bookingRequestDto.getNoOfSeats()));
-		Boolean isFlightWithCapacityExists = webClientBuilder.build().get()
-				.uri("http://inventory-service/api/inventory",
-						uriBuilder -> uriBuilder.queryParams(requestParamMap).build())
-				.retrieve().bodyToMono(Boolean.class).block();
-		if (Boolean.TRUE.equals(isFlightWithCapacityExists)) {
+//		MultiValueMap<String, String> requestParamMap = new LinkedMultiValueMap<>();
+//		requestParamMap.add("flightId", String.valueOf(bookingRequestDto.getFlightId()));
+		CommonResponse[] flightResponse = webClientBuilder.build().get()
+				.uri("http://flight-service/api/flight",
+						uriBuilder -> uriBuilder.queryParam("search","id:"+bookingRequestDto.getFlightId()).queryParam("departureDate",bookingRequestDto.getDepartureDate()).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
+		if (flightResponse!=null && flightResponse[0].getAvailableSeats()>= bookingRequestDto.getNoOfSeats()) {
 			return bookingRepository.save(bookingDetails).getPnr();
 		} else {
 			throw new ResourceNotFoundException("Seats are not available for FlightId : " + bookingRequestDto.getFlightId());
@@ -80,7 +79,7 @@ public class BookingServiceImpl implements BookingService {
 
 	private Booking mapToModel(BookingRequestDto bookingRequestDto) {
 		return Booking.builder().email(bookingRequestDto.getEmail()).flightId(bookingRequestDto.getFlightId())
-				.noOfSeats(bookingRequestDto.getNoOfSeats()).build();
+				.noOfSeats(bookingRequestDto.getNoOfSeats()).departureDate(bookingRequestDto.getDepartureDateAsDate(bookingRequestDto.getDepartureDate())).build();
 	}
 
 	@Override
@@ -101,6 +100,7 @@ public class BookingServiceImpl implements BookingService {
 				.map(this::mapToModelPassengerDetailsDto).collect(Collectors.toList());
 		return BookingResponseDto.builder().id(booking.getId()).pnr(booking.getPnr()).email(booking.getEmail())
 				.flightId(booking.getFlightId()).noOfSeats(booking.getNoOfSeats()).bookingDate(booking.getBookingDate())
+				.departureDate(booking.getDepartureDate().format(Constants.DATE_FORMATTER))
 				.passengerDetailsDtoList(passengerDetailsDtoList)
 				.status(StatusEnum.fromStatus(booking.getStatus()).getStatusName()).build();
 	}

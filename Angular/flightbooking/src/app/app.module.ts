@@ -22,6 +22,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AirportService } from './services/airport.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DatePipe } from '@angular/common';
+import { BookFlightComponent } from './book-flight/book-flight.component';
 
 
 
@@ -31,7 +32,8 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     BackgroundComponent,
     routingComponents,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    BookFlightComponent
   ],
   imports: [
     BrowserModule,

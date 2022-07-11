@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookFlightComponent } from './book-flight/book-flight.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SearchFlightComponent } from './search-flight/search-flight.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //prefix,full
   { path: 'home', component: HomepageComponent },
   { path: 'search', component: SearchFlightComponent },
+  { path: 'book', component: BookFlightComponent },
   { path: '**', component: PagenotfoundComponent },
 
 ];

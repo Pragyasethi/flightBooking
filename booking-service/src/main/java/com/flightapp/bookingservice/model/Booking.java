@@ -1,5 +1,6 @@
 package com.flightapp.bookingservice.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class Booking {
 	@Column(nullable = false)
 	private Long flightId;
 	private LocalDateTime bookingDate;
+	private LocalDate departureDate;
 	private Integer noOfSeats;
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<PassengerDetails> passengerDetails; 
