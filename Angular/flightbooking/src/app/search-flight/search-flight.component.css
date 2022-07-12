@@ -1,4 +1,7 @@
 #search-div{
 position: relative;
 display: block;
+/* display: flex; */
+justify-content: center;
+
 }

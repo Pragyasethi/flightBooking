@@ -39,7 +39,8 @@ public class BookingServiceImpl implements BookingService {
 	private final SpecificationBuilder<Booking> specificationBuilder;
 
 	@Override
-	public String bookTicket(BookingRequestDto bookingRequestDto) {
+	public BookingResponseDto bookTicket(BookingRequestDto bookingRequestDto) {
+		BookingResponseDto response = new BookingResponseDto();
 		Booking bookingDetails = mapToModel(bookingRequestDto);
 		bookingDetails.setPnr(UUID.randomUUID().toString());
 		bookingDetails.setBookingDate(LocalDateTime.now());
@@ -50,25 +51,22 @@ public class BookingServiceImpl implements BookingService {
 
 		bookingDetails.setPassengerDetails(passengerDetailsList);
 
-		// Call Inventory Service to check Seats availability at the time of booking.
+		CommonResponse[] flightResponse = fetchFlightDetails(bookingRequestDto.getFlightId(),
+				bookingRequestDto.getDepartureDate());
 
-//		MultiValueMap<String, String> requestParamMap = new LinkedMultiValueMap<>();
-//		requestParamMap.add("flightId", String.valueOf(bookingRequestDto.getFlightId()));
-		CommonResponse[] flightResponse = webClientBuilder.build().get()
-				.uri("http://flight-service/api/flight",
-						uriBuilder -> uriBuilder.queryParam("search","id:"+bookingRequestDto.getFlightId()).queryParam("departureDate",bookingRequestDto.getDepartureDate()).build())
-				.retrieve().bodyToMono(CommonResponse[].class).block();
-		if (flightResponse!=null && flightResponse[0].getAvailableSeats()>= bookingRequestDto.getNoOfSeats()) {
-			return bookingRepository.save(bookingDetails).getPnr();
+		if (flightResponse != null && flightResponse[0] != null
+				&& flightResponse[0].getAvailableSeats() >= bookingRequestDto.getNoOfSeats()) {
+			return mapToDtoResponse(bookingRepository.save(bookingDetails), flightResponse[0]);
 		} else {
-			throw new ResourceNotFoundException("Seats are not available for FlightId : " + bookingRequestDto.getFlightId());
+			throw new ResourceNotFoundException(
+					"Seats are not available for FlightId : " + bookingRequestDto.getFlightId());
 		}
 	}
 
 	private PassengerDetails mapToModelPassengerDetails(PassengerDetailsDto passengerDetailsDto) {
 		return PassengerDetails.builder().passengerName(passengerDetailsDto.getPassengerName())
 				.gender(passengerDetailsDto.getGender()).age(passengerDetailsDto.getAge())
-				.idProofNumber(passengerDetailsDto.getGender()).build();
+				.idProofNumber(passengerDetailsDto.getIdProofNumber()).build();
 	}
 
 	private PassengerDetailsDto mapToModelPassengerDetailsDto(PassengerDetails passengerDetails) {
@@ -79,20 +77,42 @@ public class BookingServiceImpl implements BookingService {
 
 	private Booking mapToModel(BookingRequestDto bookingRequestDto) {
 		return Booking.builder().email(bookingRequestDto.getEmail()).flightId(bookingRequestDto.getFlightId())
-				.noOfSeats(bookingRequestDto.getNoOfSeats()).departureDate(bookingRequestDto.getDepartureDateAsDate(bookingRequestDto.getDepartureDate())).build();
+				.noOfSeats(bookingRequestDto.getNoOfSeats())
+				.departureDate(bookingRequestDto.getDepartureDateAsDate(bookingRequestDto.getDepartureDate())).build();
 	}
 
 	@Override
-	public List<BookingResponseDto> getQueryResult(List<SearchCriteria> criteriaFilter,String search) {
+	public List<BookingResponseDto> getQueryResult(List<SearchCriteria> criteriaFilter, String search) {
 		List<Booking> bookingDetailsList = new ArrayList<>();
 		if (criteriaFilter.isEmpty() && ObjectUtils.isEmpty(search)) {
 			bookingDetailsList = bookingRepository.findAll();
-		} else if(!criteriaFilter.isEmpty()) {
+		} else if (!criteriaFilter.isEmpty()) {
 			bookingDetailsList = bookingRepository
 					.findAll(specificationBuilder.getSpecificationFromFilters(criteriaFilter));
 		}
+//		List<Long> flightIds = bookingDetailsList.stream().map(list -> list.getFlightId()).collect(Collectors.toList());
+//		CommonResponse[] flightResponse = fetchFlightDetails(flightIds);
+//		if (flightResponse != null) {
+//
+//			return mapToDtoResponse(bookingRepository.save(bookingDetails), flightResponse[0]);
+//		} else {
+//			throw new ResourceNotFoundException(
+//					"Seats are not available for FlightId : " + bookingRequestDto.getFlightId());
+//		}
 		return bookingDetailsList.stream().map(this::mapToDtoResponse).collect(Collectors.toList());
 
+	}
+
+	private BookingResponseDto mapToDtoResponse(Booking booking, CommonResponse commonResponse) {
+		List<PassengerDetailsDto> passengerDetailsDtoList = booking.getPassengerDetails().stream()
+				.map(this::mapToModelPassengerDetailsDto).collect(Collectors.toList());
+		return BookingResponseDto.builder().id(booking.getId()).pnr(booking.getPnr()).email(booking.getEmail())
+				.flightId(booking.getFlightId()).noOfSeats(booking.getNoOfSeats()).bookingDate(booking.getBookingDate())
+				.departureDate(booking.getDepartureDate().format(Constants.DATE_FORMATTER))
+				.passengerDetailsDtoList(passengerDetailsDtoList)
+				.status(StatusEnum.fromStatus(booking.getStatus()).getStatusName())
+				.flightNumber(commonResponse.getFlightNumber()).fromCity(commonResponse.getSource())
+				.toCity(commonResponse.getDestination()).build();
 	}
 
 	private BookingResponseDto mapToDtoResponse(Booking booking) {
@@ -108,11 +128,50 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public BookingResponseDto cancelTicket(String pnr) {
 
-		Booking booking =bookingRepository.findByPnr(pnr).orElseThrow(() -> new ResourceNotFoundException(
-				"Booking Details not found for pnr:  " + pnr ));
+		Booking booking = bookingRepository.findByPnr(pnr)
+				.orElseThrow(() -> new ResourceNotFoundException("Booking Details not found for pnr:  " + pnr));
 		booking.setStatus(StatusEnum.CANCELLED.getStatus());
 		bookingRepository.save(booking);
-		return mapToDtoResponse(booking);
+		CommonResponse[] flightResponse = fetchFlightDetails(booking.getFlightId(),
+				booking.getDepartureDate().format(Constants.DATE_FORMATTER));
+		if (flightResponse != null && flightResponse[0] != null) {
+			return mapToDtoResponse(booking, flightResponse[0]);
+		} else {
+			throw new ResourceNotFoundException("Seats are not available for FlightId : " + booking.getFlightId());
+		}
+
+	}
+
+	/**
+	 * To fetch flight details from Flightservice.
+	 * 
+	 * @param flightId
+	 * @param departureDate
+	 * @return
+	 */
+	private CommonResponse[] fetchFlightDetails(Long flightId, String departureDate) {
+		return webClientBuilder.build().get()
+				.uri("http://flight-service/api/flight",
+						uriBuilder -> uriBuilder.queryParam("search", "id:" + flightId)
+								.queryParam("departureDate", departureDate).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
+	}
+
+	/**
+	 * To fetch flight details from Flightservice.
+	 * 
+	 * @param flightIds
+	 * @return
+	 */
+	private CommonResponse[] fetchFlightDetails(List<Long> flightIds) {
+		String searchString = "";
+		for (Long flightId : flightIds) {
+			searchString = searchString.concat("id:").concat(flightId.toString()).concat(",");
+		}
+		final String str = searchString;
+		return webClientBuilder.build().get()
+				.uri("http://flight-service/api/flight", uriBuilder -> uriBuilder.queryParam("search", str).build())
+				.retrieve().bodyToMono(CommonResponse[].class).block();
 	}
 
 }

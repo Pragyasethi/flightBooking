@@ -1,5 +1,4 @@
 <div>
-    <!-- <img id="header-img" src="\assets\airplane-flying.jpg" alt=""> -->
     <h1 id="home-header">look . book . go</h1>
     <form class="form-container" (ngSubmit)="onSearchSubmit(searchform)" #searchform="ngForm">
         <mat-radio-group aria-label="Select an option" class="radio" name="trip" >
@@ -12,7 +11,7 @@
         </div>
 
         <mat-form-field *ngIf="airportList.length>0">
-            <mat-select placeholder="Source" #singleSelect name="source" ngModel>
+            <mat-select placeholder="Source" #singleSelect name="source" ngModel required>
                 <mat-option>
                     <ngx-mat-select-search placeholderLabel="Source"></ngx-mat-select-search>
                 </mat-option>
@@ -23,7 +22,7 @@
             </mat-select>
         </mat-form-field>
         <mat-form-field *ngIf="airportList.length>0">
-            <mat-select placeholder="Destination" #singleSelect  name="destination" ngModel>
+            <mat-select placeholder="Destination" #singleSelect  name="destination" ngModel required>
                 <mat-option>
                     <ngx-mat-select-search placeholderLabel="Destination"></ngx-mat-select-search>
                 </mat-option>
@@ -34,7 +33,7 @@
             </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Departure Date"  name="scheduledfor" ngModel>
+            <input matInput [matDatepicker]="picker" placeholder="Departure Date"  name="scheduledfor" ngModel required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

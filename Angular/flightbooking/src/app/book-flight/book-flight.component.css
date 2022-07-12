@@ -1,3 +1,70 @@
-.container{
+.bookingPage {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 30px;
+    top: 30px;
+
+
+}
+
+.mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+}
+
+.mat-form-field~.mat-form-field {
+    margin-left: 12px;
+}
+
+.col-md-2 {
+    margin-left: 12px;
+
+}
+
+p {
+    font-family: Lato;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    color: rgb(88, 85, 134);
+    border: 20px;
+    top: 50px;
+    font-style: oblique;
+    text-shadow: 2px 2px #fff;
+    font-size: 30px;
+}
+
+.justify-content-start {
+    justify-content: start;
+    display: flex;
+}
+
+h1 {
+    padding: 10px 0;
+    font-size: 32px;
+    font-weight: 100;
+    text-align: center;
+}
+
+.passengerForm {
+    margin: 0 30px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    transform: scale(1);
+
+}
+
+#search-div {
+    position: relative;
+    display: block;
+    /* display: flex; */
+    justify-content: center;
+
 }

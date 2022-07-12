@@ -66,7 +66,7 @@ public class FlightServiceImpl implements FlightService {
 				.arrTime(flight.getArrTime()).deptTime(flight.getDeptTime())
 //				.source(flight.getSource().getAirportCode())
 //				.destination(flight.getDestination().getAirportCode())
-				.source(source.getAirportCode()).destination(destination.getAirportCode())
+				.source(source.getAirportLocation()).destination(destination.getAirportLocation())
 
 				.scheduledfor(flight.getScheduledfor()).availableSeats(flight.getCapacity())
 				// .flightScheduleDto(flightScheduleDto)

@@ -32,19 +32,7 @@ export class HomepageComponent implements OnInit {
   // }
 
   onSearchSubmit(searchform: NgForm) {
-    this.flightService.searchActiveFlights(searchform)
-      .subscribe({
-        next: (res: any) => {
-          this.flightList=res;
-          console.log(this.flightList);
-
-          this.goToFlightList();
-        },
-        error: (e) => {
-          console.log(e);
-          this.errorMessage = e.message;
-        }
-      })
+    this.searchFlightsWithCondition(searchform); 
   }
   goToFlightList() {
     localStorage.setItem("flightList",JSON.stringify(this.flightList));
@@ -66,10 +54,19 @@ export class HomepageComponent implements OnInit {
       })
   }
 
-  //  submitted = false;
+  searchFlightsWithCondition(searchform:NgForm){
+    this.flightService.searchActiveFlights(searchform)
+      .subscribe({
+        next: (res: any) => {
+          this.flightList=res;
+          console.log(this.flightList);
 
-  // onSubmit(form: NgForm) {
-  //   this.submitted = true;
-  //   console.log('Your form data : ', form.value);
-  // }
+          this.goToFlightList();
+        },
+        error: (e) => {
+          console.log(e);
+          this.errorMessage = e.message;
+        }
+      })
+  }
 }

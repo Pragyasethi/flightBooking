@@ -39,11 +39,12 @@ public class BookingController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public String bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
-		String pnr = bookingService.bookTicket(bookingRequestDto);
+	public BookingResponseDto bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
+		BookingResponseDto response = bookingService.bookTicket(bookingRequestDto);
 		// Call Inventory through Kafka to book tickets
 		kafkaTemplate.send("BookingToInventoryBook", JsonUtil.toJson(bookingRequestDto));
-		return "Ticket booked successfully Your PNR number is " + pnr;
+//		return "Ticket booked successfully Your PNR number is " + response.getPnr();
+		return response;
 
 	}
 

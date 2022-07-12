@@ -13,7 +13,7 @@ public interface BookingService {
 	 * @param bookingRequestDto
 	 * @return
 	 */
-	public String bookTicket(BookingRequestDto bookingRequestDto);
+	public BookingResponseDto bookTicket(BookingRequestDto bookingRequestDto);
 
 	/**
 	 * Find all Ticket Details.

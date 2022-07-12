@@ -27,7 +27,7 @@ public class Inventory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(unique = true, nullable = false)
+	@Column(nullable = false)
 	private Long flightId;
 	@Column( nullable = false)
 	private Integer bookedSeats;
