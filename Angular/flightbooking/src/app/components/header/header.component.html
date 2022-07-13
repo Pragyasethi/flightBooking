@@ -1,0 +1,12 @@
+<div class="header">
+    <div>
+        <img id="logo" src="/assets/Logo.jpg" alt="Company Logo">
+        <button id="loginbutton" [routerLink]="['/login']" *ngIf="!(router.url.includes('login') || router.url.includes('register'))">Login/SignUp</button>
+        <div class="container" *ngIf="!router.url.includes('home')">
+            <button id="foot"><button class="button-os"><a [routerLink]="['/home']">Home</a></button></button>
+            <button id="foot"><button class="button-os"><a [routerLink]="['/flights']">Search Flights</a></button></button>
+            <button id="foot"><button class="button-os"><a [routerLink]="['/bookings/search']">Bookings</a></button></button>
+            <!-- <button id="foot"><button class="button-os"><a [routerLink]="['/book']">Book Ticket</a></button></button> -->
+        </div>
+    </div>
+</div>

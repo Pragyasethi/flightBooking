@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonInclude(value = Include.NON_NULL)
 public class CommonResponse {
-	private String flightId;
+	private Long flightId;
 	private String flightNumber;
 	private Double price;
 	private String airlineId;

@@ -56,15 +56,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-content: center;
-
     transform: scale(1);
-
-}
-
-#search-div {
-    position: relative;
-    display: block;
-    /* display: flex; */
-    justify-content: center;
 
 }

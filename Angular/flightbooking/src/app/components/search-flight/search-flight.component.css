@@ -1,0 +1,27 @@
+#search-div {
+    position: relative;
+    display: block;
+    /* display: flex; */
+    justify-content: center;
+    top: 30px;
+
+}
+
+p {
+    font-family: Lato;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    color: rgb(88, 85, 134);
+    border: 20px;
+    font-style: oblique;
+    text-shadow: 2px 2px #fff;
+    font-size: 30px;
+}
+
+#table {
+    margin-left: 30%;
+    margin-right: auto;
+    margin-top: 3%;
+}

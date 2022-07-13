@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Booking } from '../models/booking';
+import { Component, Inject, OnInit } from '@angular/core';
+import { Booking } from '../../models/booking';
 import { FormArray, FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
-import { BookService } from '../services/book.service';
+import { BookService } from '../../services/book.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -16,18 +17,18 @@ export class BookFlightComponent implements OnInit {
   form!: FormGroup;
   errorMessage: any;
   params!: Params;
-  bookingList: Booking[] = [];
 
 
   constructor(private formBuilder: FormBuilder,
-    private bookService: BookService, private route: ActivatedRoute, private router: Router) { }
+    private bookService: BookService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(
       params => this.params = params);
     this.form = this.formBuilder.group({
-      passengerCount: new FormControl([0], [Validators.required]),
-      passengers: new FormArray([]),
+      noOfSeats: new FormControl([0], [Validators.required]),
+      passengerDetails: new FormArray([]),
       departureDate: new FormControl(this.params['date']),
       flightId: new FormControl(this.params['id']),
       phone: new FormControl('', [
@@ -47,13 +48,13 @@ export class BookFlightComponent implements OnInit {
     }
 
     length = Math.min(length, 50);
-    if (length > this.passengers.length) {
-      const size = length - this.passengers.length;
+    if (length > this.passengerDetails.length) {
+      const size = length - this.passengerDetails.length;
       for (let i = 0; i < size; i++) {
         this.addPassenger();
       }
-    } else if (length < this.passengers.length) {
-      const size = this.passengers.length - length;
+    } else if (length < this.passengerDetails.length) {
+      const size = this.passengerDetails.length - length;
       for (let i = 0; i < size; i++) {
         this.removePassenger();
       }
@@ -61,7 +62,7 @@ export class BookFlightComponent implements OnInit {
   }
 
   addPassenger(): void {
-    this.passengers.push(
+    this.passengerDetails.push(
       new FormGroup({
         passengerName: new FormControl(),
         idProofNumber: new FormControl(),
@@ -72,12 +73,12 @@ export class BookFlightComponent implements OnInit {
   }
 
   removePassenger() {
-    const index = this.passengers.length - 1;
-    this.passengers.removeAt(index);
+    const index = this.passengerDetails.length - 1;
+    this.passengerDetails.removeAt(index);
   }
 
-  get passengers(): FormArray {
-    return this.form.get('passengers') as FormArray;
+  get passengerDetails(): FormArray {
+    return this.form.get('passengerDetails') as FormArray;
   }
 
   onSubmit() {
@@ -86,33 +87,17 @@ export class BookFlightComponent implements OnInit {
   }
 
   saveBooking(bookingForm: FormGroup) {
-    this.bookService.createBooking(this.form.value).
+    this.bookService.createBooking(bookingForm.value).
       subscribe({
         next: (res: any) => {
           console.log(res);
-          this.findBookingDetails(res);
+          this.router.navigate(['/bookings/search'],
+            { queryParams: { pnr: res['pnr'] } }
+          );
         },
         error: (e) => {
           console.log(e);
           this.errorMessage = e.message;
-
-        }
-      })
-
-  }
-  findBookingDetails(res: any) {
-    this.bookService.findBookings(res)
-      .subscribe({
-        next: (res: any) => {
-          console.log(res);
-          this.bookingList=res;
-          this.router.navigate(['/book']);
-          localStorage.clear();
-        },
-        error: (e) => {
-          console.log(e);
-          this.errorMessage = e.message;
-
         }
       })
   }

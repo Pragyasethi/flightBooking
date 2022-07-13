@@ -21416,3 +21416,276 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:s
 2022-07-12 20:54:57,105 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-07-12 20:54:57,105 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-07-12 20:54:57,105 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:37:08,895 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:37:08,895 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:37:08,896 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:37:08,908 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:37:08,909 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:37:08,910 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:37:08,910 [Worker-178: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:00,592 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:00,592 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:00,593 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:41:00,612 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:00,615 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:00,615 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:00,616 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:17,727 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:17,727 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:17,727 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:41:17,742 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:17,746 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:17,746 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:17,747 [Worker-181: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:44,507 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:44,507 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:44,508 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:41:44,520 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:41:44,522 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:41:44,522 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:41:44,522 [Worker-174: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:49:46,680 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:49:46,680 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:49:46,681 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:49:46,693 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:49:46,695 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:49:46,695 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:49:46,695 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:50:14,981 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:50:14,981 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:50:14,982 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:50:14,992 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:50:14,994 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:50:14,994 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:50:14,994 [Worker-183: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:50:20,818 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:50:20,818 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:50:20,819 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 22:50:20,834 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:50:20,836 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 22:50:20,836 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 22:50:20,836 [Worker-189: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 22:50:33,367 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:33,732 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:34,086 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:38,098 [Worker-183: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:38,398 [Worker-183: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:38,732 [Worker-183: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:41,267 [Worker-192: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:41,611 [Worker-192: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 22:50:41,975 [Worker-192: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:01:31,571 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:01:31,571 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:01:31,572 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 23:01:31,590 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:01:31,596 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:01:31,596 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:01:31,596 [Worker-192: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:01:51,395 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:01:51,395 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:01:51,396 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 23:01:51,412 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:01:51,415 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:01:51,415 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:01:51,415 [Worker-185: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:02:01,031 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:02:01,404 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:02:01,838 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:04:00,823 [Worker-197: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:04:01,146 [Worker-197: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:04:01,479 [Worker-197: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:38,679 [Worker-188: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:38,950 [Worker-188: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:39,229 [Worker-188: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:41,550 [Worker-199: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:41,876 [Worker-199: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:42,238 [Worker-199: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:45,003 [Worker-188: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:45,330 [Worker-188: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:07:45,701 [Worker-188: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:40:51,702 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:40:51,702 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:40:51,703 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-12 23:40:51,716 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:40:51,718 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-12 23:40:51,718 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-12 23:40:51,718 [Worker-213: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-12 23:41:20,445 [Worker-209: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:20,735 [Worker-209: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:21,026 [Worker-209: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:27,924 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:28,269 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:28,601 [Worker-183: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:30,441 [Worker-214: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:30,770 [Worker-214: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-12 23:41:31,118 [Worker-214: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:12:05,766 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-13 10:34:04,151 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:04,152 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:04,159 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:04,208 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:04,212 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:04,212 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:04,213 [Worker-4: Launching discovery-service - DiscoveryServerApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:08,147 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:08,147 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:08,147 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:08,155 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:08,158 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:08,159 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:08,159 [Worker-10: Launching api-gateway - ApiGatewayApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:10,780 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:10,781 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:10,781 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:10,781 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:10,784 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:10,784 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:10,786 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:13,385 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 10:34:13,617 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:13,617 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:13,618 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:13,624 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:13,629 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:13,629 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:13,631 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:13,786 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:14,617 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:15,147 [Worker-13: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:17,105 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:17,105 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:17,106 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:17,109 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:17,112 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:17,113 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:17,113 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:19,947 [Worker-10: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 10:34:19,981 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:19,981 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:19,981 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:19,983 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:19,986 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:19,986 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:19,986 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:23,495 [Worker-10: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 10:34:23,521 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:23,522 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:23,522 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 10:34:23,525 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:23,528 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 10:34:23,528 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 10:34:23,528 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 10:34:23,858 [Worker-16: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:23,894 [Worker-14: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:24,524 [Worker-14: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:24,597 [Worker-16: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:25,499 [Worker-14: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 10:34:25,609 [Worker-16: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 12:21:57,807 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:21:57,807 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:21:57,812 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 12:21:57,873 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:21:57,877 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:21:57,878 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:21:57,878 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:08,573 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:08,573 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:08,574 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 12:22:08,587 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:08,591 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:08,591 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:08,591 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:26,464 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:26,464 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:26,464 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 12:22:26,477 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:26,481 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:26,481 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:26,481 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:40,324 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:40,324 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:40,325 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 12:22:40,342 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:40,346 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:40,346 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:40,347 [Worker-62: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:48,519 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:48,519 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:48,520 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 12:22:48,534 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:22:48,537 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 12:22:48,538 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 12:22:48,538 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 12:23:00,762 [Worker-60: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 12:23:01,282 [Worker-60: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 12:23:01,798 [Worker-60: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:02,074 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:02,254 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:02,255 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:02,256 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:02,260 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:02,260 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:02,260 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:13,338 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:13,338 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:13,339 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:24:13,452 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:13,455 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:13,455 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:13,455 [Worker-119: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:33,188 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:33,188 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:33,189 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:24:33,206 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:33,210 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:24:33,210 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:24:33,210 [Worker-114: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:24:47,974 [Worker-62: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 15:24:48,057 [Worker-62: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:48,385 [Worker-62: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:48,631 [Worker-19: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:48,817 [Worker-62: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:49,142 [Worker-19: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:49,662 [Worker-19: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:51,186 [Worker-12: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:51,616 [Worker-12: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:24:52,018 [Worker-12: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:28:59,632 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:28:59,632 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:28:59,633 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:28:59,654 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:28:59,658 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:28:59,658 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:28:59,659 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:07,635 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:07,635 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:07,636 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:30:07,667 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:07,670 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:07,670 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:07,670 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:21,474 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:21,474 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:21,475 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:30:21,505 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:21,509 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:21,509 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:21,509 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:38,281 [Worker-114: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:38,627 [Worker-114: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:38,973 [Worker-114: Launching inventory-service - InventoryServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:45,764 [Worker-124: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 15:30:45,945 [Worker-124: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:46,352 [Worker-124: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:46,753 [Worker-124: Launching flight-service - FlightServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:57,019 [Worker-120: Building workspace] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier  to /common-module/target/classes
+2022-07-13 15:30:57,043 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:57,044 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:57,044 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-13 15:30:57,079 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:57,082 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 15:30:57,082 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-07-13 15:30:57,082 [Worker-120: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 15:30:59,289 [Worker-129: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:30:59,748 [Worker-129: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes
+2022-07-13 15:31:00,179 [Worker-129: Launching booking-service - BookingServiceApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/common-module: com.flightapp:common-module:0.0.1-SNAPSHOT with classifier null to /common-module/target/classes

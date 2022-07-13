@@ -1,0 +1,51 @@
+<div class="container" id="search-div">
+    <p class="h4 mb-4"> Booking Details </p>
+    <div class="filter">
+        <form [formGroup]="form" class="text-center border border-light p-5" (ngSubmit)="onSubmit()"
+            #searchBookingform="ngForm">
+
+            <mat-form-field appearance="outline" class="width-3">
+                <mat-label>PNR</mat-label>
+                <input formControlName="pnr" maxlength="50" placeholder="Enter pnr" autocomplete="off" type="text"
+                    matInput #pnr />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="width-1">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" maxlength="50" placeholder="email@address.com" autocomplete="off"
+                    type="text" matInput #email />
+                <mat-error>Error! email is incorrect</mat-error>
+            </mat-form-field>
+
+            <button class="button">Search</button>
+
+        </form>
+    </div>
+    <div *ngIf="bookingList.length>0">
+        <br><br>
+        <table border="1" id="table" class="table table-striped table-dark" style="text-align:center;">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Booking Date </th>
+                    <th> PNR </th>
+                    <th> Departure </th>
+                    <th> No. of Passengers </th>
+                    <th> # </th>
+                </tr>
+            </thead>
+            <tr *ngFor="let booking of bookingList;let i=index">
+                <td>{{booking.bookingDate | date:"short"}} </td>
+                <td>{{booking.pnr}}</td>
+                <td>{{booking.departureDate}}</td>
+                <td>{{booking.noOfSeats}}</td>
+                <td>
+                    <button mat-button (click)="openDialog(booking)"> View </button>
+                    <button type="button" *ngIf="booking.status=='Active'"
+                        (click)="cancelBooking(booking.pnr)">Cancel</button>
+                    <button type="button" *ngIf="booking.status!=='Active'" [disabled]="true">Cancelled</button>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookFlightComponent } from './book-flight/book-flight.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { SearchFlightComponent } from './search-flight/search-flight.component';
+import { BookFlightComponent } from './components/book-flight/book-flight.component';
+import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { LoginComponent } from './components/login/login.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { RegisterComponent } from './components/register/register.component';
+import { SearchBookingComponent } from './components/search-booking/search-booking.component';
+import { SearchFlightComponent } from './components/search-flight/search-flight.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 
 const routes: Routes = [
-  // { path: '', component: HomepageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //prefix,full
-  { path: 'home', component: HomepageComponent },
-  { path: 'search', component: SearchFlightComponent },
-  { path: 'book', component: BookFlightComponent },
+  { path: 'flights', component: HomepageComponent },
+  { path: 'flights/search', component: SearchFlightComponent },
+  { path: 'bookflight', component: BookFlightComponent },
+  { path: 'bookings/search', component: SearchBookingComponent },
+  { path: 'home', component: WelcomePageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: PagenotfoundComponent },
 
 ];

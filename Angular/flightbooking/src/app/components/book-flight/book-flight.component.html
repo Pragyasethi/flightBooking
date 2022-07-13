@@ -2,11 +2,11 @@
     <form [formGroup]="form" class="text-center border border-light p-5" (ngSubmit)="onSubmit()" #bookform="ngForm">
 
         <p class="h4 mb-4">Book You Ticket</p>
-        <mat-form-field appearance="outline" class="width-1">
+        <!-- <mat-form-field appearance="outline" class="width-1">
             <mat-label>Phone</mat-label>
             <input maxlength="50" matInput formControlName="phone" placeholder="Phone" #phone required />
             <mat-error>Error! only numbers are allowed [91+10digits]</mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field appearance="outline" class="width-1">
             <mat-label>Email</mat-label>
@@ -26,14 +26,14 @@
 
         <mat-form-field appearance="outline" class="width-1">
             <mat-label>No. of Passengers</mat-label>
-            <input maxlength="1" matInput formControlName="passengerCount" placeholder="number of persons on board"
-                (input)="inputTotal(passengerCount.value)" #passengerCount required />
+            <input maxlength="1" matInput formControlName="noOfSeats" placeholder="number of persons on board"
+                (input)="inputTotal(noOfSeats.value)" #noOfSeats required />
         </mat-form-field>
         <br>
 
-        <div formArrayName="passengers">
+        <div formArrayName="passengerDetails">
             <p class="h4 mb-4">PassengerDetails</p>
-            <div *ngFor="let _ of passengers?.controls; let i = index" [formGroupName]="i">
+            <div *ngFor="let _ of passengerDetails?.controls; let i = index" [formGroupName]="i">
                 <div class="container1">
                     <div class="row justify-content-start">
                         <div class="col-md-2">
@@ -73,39 +73,4 @@
             <button mat-raised-button color="warn">Submit</button>
         </div>
     </form>
-</div>
-
-<div class="container" id="search-div" *ngIf="bookingList.length>0">
-    <h3> Booking Details </h3>
-    <table border="1" class="table table-striped table-dark">
-        <thead class="thead-dark">
-            <tr>
-                <th> Booking Date </th>
-                <th> PNR </th>
-                <th> Source </th>
-                <th> Destination </th>
-                <th> Departure Date </th>
-                <th> No. of Passengers </th>
-                <th> # </th>
-            </tr>
-        </thead>
-        <tr *ngFor="let booking of bookingList;let i=index">
-            <td>{{booking.bookingDate}} </td>
-            <td>{{booking.pnr}}</td>
-            <!-- <td>
-
-            <tr>{{booking.source}}</tr>
-            <tr> {{booking.departureTime}}</tr>
-        </td> -->
-            <!-- <td>
-            <tr>{{booking.destination}}</tr>
-            <tr> {{booking.arrivalTime}}</tr> -->
-            <!-- <td>{{booking.departureDate}}</td> -->
-            <!-- <td>{{booking.passengerCount}}</td> -->
-            <td><button type="button" class="cncBtn btn btn-danger">Cancel</button></td>
-        </tr>
-
-
-
-    </table>
 </div>

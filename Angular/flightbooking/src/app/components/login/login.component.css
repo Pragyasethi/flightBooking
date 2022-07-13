@@ -1,0 +1,5 @@
+.col-md-12{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}

@@ -3,6 +3,7 @@ package com.flightapp.bookingservice.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,12 +40,12 @@ public class BookingController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public BookingResponseDto bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
+	public ResponseEntity<BookingResponseDto> bookTicket(@RequestBody BookingRequestDto bookingRequestDto) {
 		BookingResponseDto response = bookingService.bookTicket(bookingRequestDto);
 		// Call Inventory through Kafka to book tickets
 		kafkaTemplate.send("BookingToInventoryBook", JsonUtil.toJson(bookingRequestDto));
 //		return "Ticket booked successfully Your PNR number is " + response.getPnr();
-		return response;
+		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
 
@@ -55,11 +56,11 @@ public class BookingController {
 	}
 
 	@DeleteMapping
-	public String cancelTicket(@RequestParam String pnr) {
+	public ResponseEntity<BookingResponseDto> cancelTicket(@RequestParam String pnr) {
 		BookingResponseDto bookResponseDto = bookingService.cancelTicket(pnr);
 		// Call Inventory through Kafka to book tickets
 		kafkaTemplate.send("BookingToInventoryCancel", JsonUtil.toJson(bookResponseDto));
-		return "Booking has been cancelled for Pnr:  " + bookResponseDto.getPnr();
+		return new ResponseEntity<>(bookResponseDto, HttpStatus.OK);
 
 	}
 

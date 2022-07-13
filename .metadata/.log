@@ -3499,3 +3499,207 @@ org.eclipse.debug.core.DebugException: Breakpoint does not have an associated ma
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.debug.core 4 5012 2022-07-12 20:15:42.231
 !MESSAGE Breakpoint does not have an associated marker.
+!SESSION 2022-07-13 10:10:27.444 -----------------------------------------------
+eclipse.buildId=4.4.2.201911201053-RELEASE
+java.version=11.0.12
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-07-13 10:11:41.443
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2022-07-13 10:11:49.121
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-07-13 10:11:49.121
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46051269,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@67baa05,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:06.362
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:06.369
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@7227e3f1[org.springframework.tooling.boot.ls:1.13.0.201911200938(id=632)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:06.381
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-07-13 10:12:06.503
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\cogjava1573'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:06.731
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.025
+!MESSAGE Boot LS startup time from start to initialized: 10589ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.101
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MjlXGazcisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.136
+!MESSAGE subscribing to classpath changes: sts4.classpath.MjlXGazc isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.142
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.158
+!MESSAGE subsribers = {sts4.classpath.MjlXGazc=Send Classpath Notifications(84)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.159
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.159
+!MESSAGE project booking-service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.160
+!MESSAGE project api-gateway ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.161
+!MESSAGE project flight-service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.161
+!MESSAGE project inventory-service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.161
+!MESSAGE project auth-service ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.162
+!MESSAGE project auth-service1 ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.162
+!MESSAGE project auth-service1 SKIPPED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.163
+!MESSAGE project common-module ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.163
+!MESSAGE project discovery-server ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.164
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.164
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.MjlXGazc => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.165
+!MESSAGE Preparing classpath changed notification booking-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.166
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.241
+!MESSAGE classpath=160 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.250
+!MESSAGE buffering callback sts4.classpath.MjlXGazc booking-service false 160
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.252
+!MESSAGE Preparing classpath changed notification api-gateway
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.254
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.259
+!MESSAGE classpath=112 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.263
+!MESSAGE buffering callback sts4.classpath.MjlXGazc api-gateway false 112
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.263
+!MESSAGE Preparing classpath changed notification flight-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.264
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.270
+!MESSAGE classpath=160 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.275
+!MESSAGE buffering callback sts4.classpath.MjlXGazc flight-service false 160
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.275
+!MESSAGE Preparing classpath changed notification inventory-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.276
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.293
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.298
+!MESSAGE buffering callback sts4.classpath.MjlXGazc inventory-service false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.298
+!MESSAGE Preparing classpath changed notification auth-service
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.299
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.304
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.308
+!MESSAGE buffering callback sts4.classpath.MjlXGazc auth-service false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.308
+!MESSAGE Preparing classpath changed notification common-module
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.309
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.312
+!MESSAGE classpath=69 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.315
+!MESSAGE buffering callback sts4.classpath.MjlXGazc common-module false 69
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.315
+!MESSAGE Preparing classpath changed notification discovery-server
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.316
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.322
+!MESSAGE classpath=103 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.325
+!MESSAGE buffering callback sts4.classpath.MjlXGazc discovery-server false 103
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.326
+!MESSAGE executing callback sts4.classpath.MjlXGazc 7 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-07-13 10:12:17.438
+!MESSAGE executing callback sts4.classpath.MjlXGazc SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-07-13 15:24:00.600
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1886)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2021)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)

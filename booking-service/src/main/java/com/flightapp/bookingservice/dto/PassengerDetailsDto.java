@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @JsonInclude(value = Include.NON_NULL)
 public class PassengerDetailsDto {
+	private Long passengerId;
 	private String passengerName;
 	private String gender;
 	private Integer age;

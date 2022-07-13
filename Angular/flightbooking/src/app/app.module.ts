@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchFlightComponent } from './search-flight/search-flight.component';
-import { HeaderComponent } from './header/header.component';
-import { BackgroundComponent } from './background/background.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { SearchFlightComponent } from './components/search-flight/search-flight.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BackgroundComponent } from './components/background/background.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -20,11 +20,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AirportService } from './services/airport.service';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { DatePipe } from '@angular/common';
-import { BookFlightComponent } from './book-flight/book-flight.component';
-
-
+import { BookFlightComponent } from './components/book-flight/book-flight.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BookingDetailsComponent } from './components/booking-details/booking-details.component';
+import { SearchBookingComponent } from './components/search-booking/search-booking.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { BookFlightComponent } from './book-flight/book-flight.component';
     BackgroundComponent,
     routingComponents,
     PagenotfoundComponent,
-    BookFlightComponent
+    BookFlightComponent,
+    BookingDetailsComponent,
+    SearchBookingComponent,
+    WelcomePageComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,10 +60,11 @@ import { BookFlightComponent } from './book-flight/book-flight.component';
     MatRadioModule,
     MatIconModule,
     HttpClientModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDialogModule, MatDividerModule
   ],
   providers: [
-    AirportService,
+
     DatePipe
   ],
   bootstrap: [AppComponent]

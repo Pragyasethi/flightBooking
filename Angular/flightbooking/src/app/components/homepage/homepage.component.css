@@ -1,0 +1,109 @@
+mat-form-field.mat-form-field {
+  position: relative;
+  font-size: 100%;
+  /* color: blue;
+  background-color: rgb(211, 209, 231); 
+  border: solid 5px #c0c0ff;*/
+}
+
+.form-container{
+  /* position: relative;
+  justify-content: center;
+  align-content: center;
+   left: 50%;
+  top: 50%;
+  transform: transalate(-50%,-50%); */
+  position: fixed;
+  top: 40%;
+  left: 20%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+ .mat-form-field ~ .mat-form-field {
+  margin-left: 12px;
+} 
+
+.search-icon{
+  color: blue;
+  transform: scale(1.5);
+  margin-left: 40px;
+}
+
+#home-header{
+  position: relative;
+  font-weight: bold;
+  /* font-size: 50px; */
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  color: rgb(88, 85, 134);
+  border: 20px;
+  top: 50px;
+  font-style: oblique;
+  text-shadow: 2px 2px #fff;
+
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, #606c88 , #3f4c6b);
+  font-family: 'Oswald', sans-serif;
+}
+
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  position: relative;
+  background-color: #7273af;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  width: 100px;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #193047;
+  border-radius: 4px;
+  margin-left: 40px;
+
+}
+
+.button:hover {
+  background: #fff;
+  box-shadow: 0px 2px 10px 5px #581abc;
+  color: #000;
+}
+
+.button:after {
+  content: "";
+  background: #1abc9c;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -50px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.button:focus { outline:0; }

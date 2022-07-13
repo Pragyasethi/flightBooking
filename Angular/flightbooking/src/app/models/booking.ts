@@ -1,14 +1,19 @@
 import { PassengerDetails } from "./passenger-details";
 
 export class Booking {
-    bookingId!:number;
+    id!:number;
     flightId!:number;
     email!:String;
     phone!:number;
     departureDate!:Date;
     bookingDate!:Date;
     pnr!:string;
-    passengerCount!:number;
-    passengers!:PassengerDetails [];
+    noOfSeats!:number;
+    passengerDetails!:PassengerDetails [];
+    status!:string;
+    flightNumber!: string;
+    fromCity!:string;
+    toCity!:string;
+
 
 }

@@ -1,7 +1,7 @@
 <div>
     <h1 id="home-header">look . book . go</h1>
     <form class="form-container" (ngSubmit)="onSearchSubmit(searchform)" #searchform="ngForm">
-        <mat-radio-group aria-label="Select an option" class="radio" name="trip" >
+        <mat-radio-group aria-label="Select an option" class="radio" name="trip">
             <mat-radio-button value="1" checked="true">One Way </mat-radio-button>
             <mat-radio-button value="2" disabled="true">Round Trip </mat-radio-button>
         </mat-radio-group>
@@ -9,7 +9,6 @@
         <div *ngIf="errorMessage.length>0">
             {{errorMessage}}
         </div>
-
         <mat-form-field *ngIf="airportList.length>0">
             <mat-select placeholder="Source" #singleSelect name="source" ngModel required>
                 <mat-option>
@@ -22,7 +21,7 @@
             </mat-select>
         </mat-form-field>
         <mat-form-field *ngIf="airportList.length>0">
-            <mat-select placeholder="Destination" #singleSelect  name="destination" ngModel required>
+            <mat-select placeholder="Destination" #singleSelect name="destination" ngModel required>
                 <mat-option>
                     <ngx-mat-select-search placeholderLabel="Destination"></ngx-mat-select-search>
                 </mat-option>
@@ -33,27 +32,10 @@
             </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Departure Date"  name="scheduledfor" ngModel required>
+            <input matInput [matDatepicker]="picker" placeholder="Departure Date" name="scheduledfor" ngModel required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <button mat-raised-button color="warn" class="search-icon">Search</button>
-        <!-- <button mat-icon-button color="warn" aria-label="search icon">
-        <mat-icon class="search-icon">search</mat-icon>
-    </button> -->
+        <button class="button">Search</button>
     </form>
 </div>
-
-
-
-<!-- <mat-select [formControl]="currencyCtrl" placeholder="Currency" #singleSelect>
-    <mat-option>
-      <ngx-mat-select-search [formControl]="websiteFilterCtrl"></ngx-mat-select-search>
-    </mat-option> 
-
-    <mat-option *ngFor="let currency of currencies" [value]="currency.value">
-      {{currency.text}}
-
-      
-    </mat-option>
-  </mat-select> -->

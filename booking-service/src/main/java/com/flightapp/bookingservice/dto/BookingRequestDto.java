@@ -22,11 +22,11 @@ public class BookingRequestDto {
 	private String pnr;
 	private String email;
 	private Long flightId;
-	@JsonProperty("passengerCount")
+	@JsonProperty("noOfSeats")
 	private Integer noOfSeats;
 	private LocalDateTime bookingDate;
 	private String departureDate;
-	@JsonProperty("passengers")
+	@JsonProperty("passengerDetails")
 	private List<PassengerDetailsDto> passengerDetailsDtoList;
 	private Integer status;
 	
