@@ -17,7 +17,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AirportService } from './services/airport.service';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
@@ -30,6 +30,16 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { MatDividerModule } from '@angular/material/divider';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { AirportComponent } from './components/airport/airport.component';
+import { FlightComponent } from './components/flight/flight.component';
+import { FlightDetailsComponent } from './components/flight-details/flight-details.component';
+import { AuthInterceptor } from './auth.interceptor';
+import { AddFlightComponent } from './components/add-flight/add-flight.component';
+import { AddAirportComponent } from './components/add-airport/add-airport.component';
+import { AddAirlineComponent } from './components/add-airline/add-airline.component';
+import { AirportDetailsComponent } from './components/airport-details/airport-details.component';
+import { AirlineDetailsComponent } from './components/airline-details/airline-details.component';
+import { AirlineComponent } from './components/airline/airline.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +54,17 @@ import { LoginComponent } from './components/login/login.component';
     WelcomePageComponent,
     RegisterComponent,
     LoginComponent,
+    AirportComponent,
+    FlightComponent,
+    FlightDetailsComponent,
+    HomepageComponent,
+    SearchFlightComponent,
+    AddFlightComponent,
+    AddAirportComponent,
+    AddAirlineComponent,
+    AirportDetailsComponent,
+    AirlineDetailsComponent,
+    AirlineComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +85,7 @@ import { LoginComponent } from './components/login/login.component';
     MatDialogModule, MatDividerModule
   ],
   providers: [
-
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     DatePipe
   ],
   bootstrap: [AppComponent]

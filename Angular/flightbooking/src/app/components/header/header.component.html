@@ -1,12 +1,18 @@
 <div class="header">
     <div>
         <img id="logo" src="/assets/Logo.jpg" alt="Company Logo">
-        <button id="loginbutton" [routerLink]="['/login']" *ngIf="!(router.url.includes('login') || router.url.includes('register'))">Login/SignUp</button>
-        <div class="container" *ngIf="!router.url.includes('home')">
+        <button id="loginbutton" *ngIf="!isLoggedIn"><a [routerLink]="['/login']">Login/SignUp</a></button>
+        <button id="loginbutton" (click)="logout()" *ngIf="isLoggedIn"><a [routerLink]="['/home']">Logout</a></button>
+        <div class="container" *ngIf="!router.url.includes('home') && !showAdminBoard">
             <button id="foot"><button class="button-os"><a [routerLink]="['/home']">Home</a></button></button>
             <button id="foot"><button class="button-os"><a [routerLink]="['/flights']">Search Flights</a></button></button>
             <button id="foot"><button class="button-os"><a [routerLink]="['/bookings/search']">Bookings</a></button></button>
-            <!-- <button id="foot"><button class="button-os"><a [routerLink]="['/book']">Book Ticket</a></button></button> -->
+        </div>
+        <div class="container" *ngIf="!router.url.includes('home') && showAdminBoard">
+            <button id="foot"><button class="button-os"><a [routerLink]="['/admin/home']">Home</a></button></button>
+            <button id="foot"><button class="button-os"><a [routerLink]="['/admin/flights']">Flights</a></button></button>
+            <button id="foot"><button class="button-os"><a [routerLink]="['/admin/airport']">Airports</a></button></button>
+            <button id="foot"><button class="button-os"><a [routerLink]="['/admin/airline']">Airlines</a></button></button>
         </div>
     </div>
 </div>

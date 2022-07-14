@@ -1,0 +1,14 @@
+h3 {
+    font-weight: bold;
+    font-size: small;
+    font-style: italic;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+

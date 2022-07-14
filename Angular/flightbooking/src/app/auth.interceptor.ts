@@ -3,8 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor,
-  HTTP_INTERCEPTORS
+  HttpInterceptor
+  
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StoreTokenService } from './services/store-token.service';
@@ -21,13 +21,13 @@ export class AuthInterceptor implements HttpInterceptor {
   // next: HttpHandler object represents the next interceptor in the chain of interceptors.
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let authReq = request;
+    console.log("In interceptor: "+request)
     const token = this.tokenService.getToken();
+    console.log("In interceptor: "+token)
+
     if (token != null) {
       authReq = request.clone({ headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
     }
-    return next.handle(request);
+    return next.handle(authReq);
   }
 }
-export const authInterceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-];

@@ -3,6 +3,7 @@ package com.flightapp.authservice.service;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.flightapp.authservice.dto.AuthRequest;
-import com.flightapp.authservice.dto.AuthResponse;
+import com.flightapp.authservice.dto.MessageResponse;
 import com.flightapp.authservice.model.UserRoleDetails;
 import com.flightapp.authservice.repository.UserRoleDetailsRepository;
 import com.flightapp.authservice.util.JwtUtil;
@@ -38,17 +39,28 @@ public class JwtUserDetailsService implements UserDetailsService{
 
 	}
 	
-	public AuthResponse saveUserDetails(AuthRequest authRequest) {
+	public ResponseEntity<?> saveUserDetails(AuthRequest authRequest) {
         //do validation if user already exists
+		if (userRepository.existsByUsername(authRequest.getUsername())) {
+		      return ResponseEntity
+		          .badRequest()
+		          .body(new MessageResponse("Error: Username is already taken!"));
+		    }
+
+		    if (userRepository.existsByEmail(authRequest.getEmail())) {
+		      return ResponseEntity
+		          .badRequest()
+		          .body(new MessageResponse("Error: Email is already in use!"));
+		    }
         authRequest.setPassword(bCryptPasswordEncoder
                 .encode(authRequest.getPassword()));
 
-        UserRoleDetails user = userRepository.save(mapToModel(authRequest));
-        UserDetails userDetails =new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-				Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
-        String accessToken = jwtUtil.generateToken(userDetails);
+        userRepository.save(mapToModel(authRequest));
+//        UserDetails userDetails =new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+//				Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
+//        String accessToken = jwtUtil.generateToken(userDetails);
 
-        return new AuthResponse(accessToken);
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 		
 	}
 	

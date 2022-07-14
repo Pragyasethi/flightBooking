@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { EventEmitter, Injectable, Output } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {  Injectable, Output } from '@angular/core';
+import { Params } from '@angular/router';
+import { Airport } from '../models/airport';
 
 const AIRPORT_API = 'http://localhost:8090/api/booking/airport';
 
@@ -13,11 +14,35 @@ const httpOptions = {
 })
 export class AirportService {
 
-
   constructor(private http:HttpClient) { }
 
-  findAllAirports(){
+  findAllActiveAirports(){
     return this.http.get(AIRPORT_API.concat('?search=status:1'));
+  }
+
+  findAllAirports(params:Params){
+    let url="";
+    const keys = Object.keys(params);
+    keys.forEach(key => {
+      let value = params[key];
+      if (value!==null || value!=='') {
+          url = url.concat(key).concat(':').concat(value).concat(',');
+        }
+      }
+    )
+    return this.http.get(AIRPORT_API.concat('?search=').concat(url));
+  }
+
+  findAirportById(id: string) {
+    return this.http.get(AIRPORT_API.concat('?search=id:' + id));
+  }
+
+  addAirport(airportData: Airport) {
+    return this.http.post(AIRPORT_API, airportData, httpOptions);
+  }
+
+  updateAirport(airportData: Airport) {
+    return this.http.put(AIRPORT_API, airportData, httpOptions);
   }
 
 }

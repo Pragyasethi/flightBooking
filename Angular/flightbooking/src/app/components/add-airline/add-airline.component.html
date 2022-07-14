@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 *ngIf="isAddMode">Add Airline</h1>
+    <h1 *ngIf="!isAddMode">Edit Airline</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-5">
+                <label>Airline Name</label>
+                <input type="text" formControlName="airlineName" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.airlineName.errors }" />
+                <div *ngIf="submitted && f.airlineName.errors" class="invalid-feedback">
+                    <div *ngIf="f.airlineName.errors.required">Airline Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Logo</label>
+                <input type="text" formControlName="airlineLogo" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.airlineLogo.errors }" />
+                <div *ngIf="submitted && f.airlineLogo.errors" class="invalid-feedback">
+                    <div *ngIf="f.airlineLogo.errors.required">Airline Logo is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Status</label>
+                <select formControlName="status" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+                    <option *ngFor="let i of statusArray" [ngValue]="i.id">{{i.name}}</option>
+                </select>
+                <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                    <div *ngIf="f.status.errors.required">status Logo is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm mr-1"></span>
+                Save
+            </button>
+        </div>
+    </form>
+</div>

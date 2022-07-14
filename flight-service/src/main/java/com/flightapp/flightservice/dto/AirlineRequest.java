@@ -2,6 +2,7 @@ package com.flightapp.flightservice.dto;
 
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -14,6 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
 public class AirlineRequest {
+	@JsonAlias("airlineId")
 	private String id;
 	@NotBlank
 	private String airlineName;

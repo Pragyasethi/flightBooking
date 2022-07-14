@@ -1,0 +1,21 @@
+<div class="container" id="search-div">
+    <p class="h4 mb-4"> Airport Details</p>
+    <a href="/admin/airport/add" class="bn3637 bn37">Add</a>
+    <table border="1" id="table" class="table table-striped table-dark" style="text-align:center;">
+        <thead class="thead-dark">
+            <tr>
+                <th> Airport Name </th>
+                <th> Airport Location</th>
+                <th> # </th>
+            </tr>
+        </thead>
+        <tr *ngFor="let airport of airportList">
+            <td>{{airport.airportName}}</td>
+            <td>{{airport.airportLocation}}</td>
+            <td>
+                <button mat-button (click)="openDialog(airport)"> View </button>
+                <button type="button" (click)="editAirport(airport.airportId)">Edit</button>
+            </td>
+        </tr>
+    </table>
+</div>

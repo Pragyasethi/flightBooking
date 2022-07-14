@@ -12,5 +12,8 @@ public interface UserRoleDetailsRepository extends JpaRepository<UserRoleDetails
 	
 	Optional<UserRoleDetails> findByUsername(String username);
 	
+	  Boolean existsByUsername(String username);
+
+	  Boolean existsByEmail(String email);
 
 }

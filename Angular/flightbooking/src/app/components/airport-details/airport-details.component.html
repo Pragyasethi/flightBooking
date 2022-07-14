@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Details of Airport: {{data.airportName}} </h2>
+<mat-dialog-content class="mat-typography">
+    <div class="pull-left">
+        <h3>Name</h3>
+        <p>{{data.airportName}}</p>
+
+        <h3>Location</h3>
+        <p>{{data.airportLocation}}</p>
+
+    </div>
+
+    <div class="pull-right">
+        <h3>Code</h3>
+        <p>{{data.airportCode}}</p>
+
+        <h3>Status</h3>
+        <p [style.color]="data.status==='Active'?'green':'red'">{{data.status}}</p>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Details of Airline: {{data.airlineName}} </h2>
+<mat-dialog-content class="mat-typography">
+    <div class="pull-left">
+        <h3>Name</h3>
+        <p>{{data.airlineName}}</p>
+
+        <h3>Logo</h3>
+        <p>{{data.airlineLogo}}</p>
+
+    </div>
+
+    <div class="pull-right">
+        <h3>Status</h3>
+        <p [style.color]="data.status==='Active'?'green':'red'">{{data.status}}</p>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

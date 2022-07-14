@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Airport } from '../../models/airport';
 import { Flight } from '../../models/flight';
 import { AirportService } from '../../services/airport.service';
@@ -22,7 +21,7 @@ export class HomepageComponent implements OnInit {
   constructor(private flightService: FlightService, private airportService: AirportService, private router: Router) { }
 
   ngOnInit(): void {
-    this.findAllAirports();
+    this.findAllActiveAirports();
   }
 
   onSearchSubmit(searchform: NgForm) {
@@ -33,8 +32,8 @@ export class HomepageComponent implements OnInit {
 
 
   // To get list of all airports for dropdown
-  findAllAirports() {
-    this.airportService.findAllAirports()
+  findAllActiveAirports() {
+    this.airportService.findAllActiveAirports()
       .subscribe({
         next: (res: any) => {
           console.log(res);

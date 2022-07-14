@@ -1,0 +1,57 @@
+#search-div {
+    position: relative;
+    display: block;
+    /* display: flex; */
+    justify-content: center;
+    top: 30px;
+
+}
+
+p {
+    font-family: Lato;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    color: rgb(88, 85, 134);
+    border: 20px;
+    font-style: oblique;
+    text-shadow: 2px 2px #fff;
+    font-size: 30px;
+}
+
+#table {
+    margin: auto;
+    margin-left: 45%;
+    margin-right: auto;
+    margin-top: 1%;
+
+}
+
+.bn3637 {
+    display: inline-flex;
+    margin-left: 35%;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+}
+
+.bn37 {
+    border-color: transparent;
+    background-color: #fff;
+    color: #000;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+.bn37:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
