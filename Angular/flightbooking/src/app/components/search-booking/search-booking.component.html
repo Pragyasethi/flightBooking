@@ -39,10 +39,10 @@
                 <td>{{booking.departureDate}}</td>
                 <td>{{booking.noOfSeats}}</td>
                 <td>
-                    <button mat-button (click)="openDialog(booking)"> View </button>
-                    <button type="button" *ngIf="booking.status=='Active'"
+                    <button mat-stroked-button color="primary" (click)="openDialog(booking)"> View </button>
+                    <button mat-stroked-button color="warn" type="button" *ngIf="booking.status=='Active'"
                         (click)="cancelBooking(booking.pnr)">Cancel</button>
-                    <button type="button" *ngIf="booking.status!=='Active'" [disabled]="true">Cancelled</button>
+                    <button mat-stroked-button color="primary" type="button" *ngIf="booking.status!=='Active'" [disabled]="true">Cancelled</button>
 
                 </td>
             </tr>

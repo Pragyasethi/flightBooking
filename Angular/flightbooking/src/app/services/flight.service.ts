@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
+import { Flight } from '../models/flight';
 
 
 const FLIGHT_API = 'http://localhost:8090/api/flight';
@@ -18,6 +19,7 @@ export class FlightService {
   departureDate: any;
   constructor(private http: HttpClient, private datePipe: DatePipe) { }
   
+  /*for user view */
   searchActiveFlights(params: Params) {
     let host = "http://localhost:8090/api/booking/flight?departureDate=";
     let searchUrl = '&search=';
@@ -40,7 +42,11 @@ export class FlightService {
 
   }
 
-  searchAllFlights(params: Params) {
+  findAllActiveFlights(){
+    return this.http.get(FLIGHT_API.concat('?search=status:1'));
+  }
+
+  findAllFlights(params: Params) {
     let url="";
     const keys = Object.keys(params);
     keys.forEach(key => {
@@ -53,4 +59,17 @@ export class FlightService {
     return this.http.get(FLIGHT_API.concat('?departureDate=&search=').concat(url));
 
   }
+
+  findFlightById(id: string) {
+    return this.http.get(FLIGHT_API.concat('?departureDate=&search=id:' + id));
+  }
+
+  addFlight(flightData: Flight) {
+    return this.http.post(FLIGHT_API, flightData, httpOptions);
+  }
+
+  updateFlight(flightData: Flight) {
+    return this.http.put(FLIGHT_API, flightData, httpOptions);
+  }
+
 }

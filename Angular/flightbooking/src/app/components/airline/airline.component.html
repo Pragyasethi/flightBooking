@@ -13,8 +13,8 @@
             <td>{{airline.airlineName}}</td>
             <td>{{airline.airlineLogo}}</td>
             <td>
-                <button mat-button (click)="openDialog(airline)"> View </button>
-                <button type="button" (click)="editAirline(airline.airlineId)">Edit</button>
+                <button mat-stroked-button color="primary" (click)="openDialog(airline)"> View </button>
+                <button mat-stroked-button color="primary" type="button" (click)="editAirline(airline.airlineId)">Edit</button>
             </td>
         </tr>
     </table>

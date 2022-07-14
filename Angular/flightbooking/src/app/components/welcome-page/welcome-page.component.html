@@ -2,14 +2,14 @@
   <div class="container" *ngIf="!showAdminBoard">
     <ul>
         <li [routerLink]="['/home']">home</li>
-        <li  [routerLink]="['/flights']">search flights</li>
+        <li  [routerLink]="['/flight']">search flights</li>
         <li  [routerLink]="['/bookings/search']">bookings</li>
       </ul>
   </div>
   <div class="container" *ngIf="showAdminBoard">
     <ul>
         <li [routerLink]="['/admin/home']">home</li>
-        <li  [routerLink]="['/admin/flights']">Flights</li>
+        <li  [routerLink]="['/admin/flight']">Flights</li>
         <li  [routerLink]="['/admin/airport']">Airports</li>
         <li  [routerLink]="['/admin/airline']">Airlines</li>
       </ul>

@@ -1,90 +1,124 @@
-<!-- <h1 *ngIf="isAddMode">Add User</h1>
-<h1 *ngIf="!isAddMode">Edit User</h1>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-        <div class="form-group col">
-            <label>Title</label>
-            <select formControlName="title" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
-                <option value=""></option>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-                <option value="Ms">Ms</option>
-            </select>
-            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                <div *ngIf="f.title.errors.required">Title is required</div>
+<div class="container">
+    <br>
+    <br>
+    <h1 *ngIf="isAddMode">Add Flight</h1>
+    <h1 *ngIf="!isAddMode">Edit Flight</h1>
+    <br>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Flight Number</mat-label>
+                    <input type="text" formControlName="flightNumber" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.flightNumber.errors }" matInput
+                        placeholder="flightNumber">
+                    <div *ngIf="submitted && f.flightNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.flightNumber.errors.required">Flight Number is required</div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-select formControlName="airlineId" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.airlineId.errors }" placeholder="Airline">
+                        <mat-option *ngFor="let airline of airlineList" [value]="airline.airlineId">
+                            {{airline.airlineName}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.airlineId.errors" class="invalid-feedback">
+                        <div *ngIf="f.airlineId.errors.required">Airline is required</div>
+                    </div>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-select formControlName="source" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.source.errors }" placeholder="Source">
+                        <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
+                            {{airport.airportLocation}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.source.errors" class="invalid-feedback">
+                        <div *ngIf="f.source.errors.required">source is required</div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="time" placeholder="Departure Time" formControlName="departureTime"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.departureTime.errors }">
+                    <div *ngIf="submitted && f.departureTime.errors" class="invalid-feedback">
+                        <div *ngIf="f.departureTime.errors.required">departureTime is required</div>
+                    </div>
+                </mat-form-field>
+
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-select formControlName="destination" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.destination.errors }" placeholder="Destination">
+                        <mat-option *ngFor="let airport of airportList" [value]="airport.airportId">
+                            {{airport.airportLocation}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.destination.errors" class="invalid-feedback">
+                        <div *ngIf="f.destination.errors.required">destination is required</div>
+                    </div>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="time" placeholder="Arrival Time" formControlName="arrivalTime"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.arrivalTime.errors }">
+                    <div *ngIf="submitted && f.arrivalTime.errors" class="invalid-feedback">
+                        <div *ngIf="f.arrivalTime.errors.required">arrivalTime is required</div>
+                    </div>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Scheduled For</mat-label>
+                    <mat-select type="checkbox" formControlName="scheduledfor" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.scheduledfor.errors }" multiple>
+                        <mat-option *ngFor="let day of scheduledForArray" [value]="day">{{day}}</mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.scheduledfor.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduledfor.errors.required">scheduledfor is required</div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Capacity</mat-label>
+                    <input type="text" formControlName="capacity" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.capacity.errors }" matInput placeholder="capacity">
+                </mat-form-field>
+                <div *ngIf="submitted && f.capacity.errors" class="invalid-feedback">
+                    <div *ngIf="f.capacity.errors.required">Capacity is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Price</mat-label>
+                    <input type="text" formControlName="price" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.price.errors }" matInput placeholder="capacity">
+                    <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                        <div *ngIf="f.price.errors.required">price is required</div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-select formControlName="status" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.status.errors }" placeholder="status">
+                        <mat-option *ngFor="let i of statusArray" [value]="i.id">
+                            {{i.name}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                        <div *ngIf="f.status.errors.required">status is required</div>
+                    </div>
+                </mat-form-field>
             </div>
         </div>
-        <div class="form-group col-5">
-            <label>First Name</label>
-            <input type="text" formControlName="firstName" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-            </div>
+        <div class="form-group" style="display: table-cell;width: 490px;display: flex;">
+            <button mat-stroked-button color="primary">Save</button>
         </div>
-        <div class="form-group col-5">
-            <label>Last Name</label>
-            <input type="text" formControlName="lastName" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-            </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-7">
-            <label>Email</label>
-            <input type="text" formControlName="email" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Email is required</div>
-                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label>Role</label>
-            <select formControlName="role" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
-                <option value=""></option>
-                <option value="User">User</option>
-                <option value="Admin">Admin</option>
-            </select>
-            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
-                <div *ngIf="f.role.errors.required">Role is required</div>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="!isAddMode">
-        <h3 class="pt-3">Change Password</h3>
-        <p>Leave blank to keep the same password</p>
-    </div>
-    <div class="form-row">
-        <div class="form-group col">
-            <label>Password</label>
-            <input type="password" formControlName="password" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required</div>
-                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-            </div>
-        </div>
-        <div class="form-group col">
-            <label>Confirm Password</label>
-            <input type="password" formControlName="confirmPassword" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-            </div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
-            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Save
-        </button>
-        <a routerLink="/users" class="btn btn-link">Cancel</a>
-    </div>
-</form> -->
+    </form>
+</div>

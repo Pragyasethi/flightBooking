@@ -25,7 +25,7 @@ export class HomepageComponent implements OnInit {
   }
 
   onSearchSubmit(searchform: NgForm) {
-    this.router.navigate(['/flights/search'],
+    this.router.navigate(['/flight/search'],
       { queryParams: { date: searchform.value['scheduledfor'], source: searchform.value['source'], destination: searchform.value['destination'] } }
     );
   }

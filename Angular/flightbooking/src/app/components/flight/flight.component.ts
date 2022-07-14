@@ -29,7 +29,7 @@ export class FlightComponent implements OnInit {
     this.dialog.open(FlightDetailsComponent, { data: flightDetails });
   }
   searchFlights(params: any) {
-    this.flightService.searchAllFlights(params)
+    this.flightService.findAllFlights(params)
       .subscribe({
         next: (res: any) => {
           this.flightList = res;
@@ -43,7 +43,7 @@ export class FlightComponent implements OnInit {
   }
 
   editFlight(flightId:any){
-
+    this.router.navigate(['/admin/flight/edit/'+flightId]);
   }
 
 }

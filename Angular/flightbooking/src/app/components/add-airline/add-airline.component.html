@@ -4,37 +4,43 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <div class="form-group col-5">
-                <label>Airline Name</label>
-                <input type="text" formControlName="airlineName" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.airlineName.errors }" />
-                <div *ngIf="submitted && f.airlineName.errors" class="invalid-feedback">
-                    <div *ngIf="f.airlineName.errors.required">Airline Name is required</div>
-                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Airport Name</mat-label>
+                    <input type="text" formControlName="airlineName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.airlineName.errors }" matInput
+                        placeholder="airlineName">
+                    <div *ngIf="submitted && f.airlineName.errors" class="invalid-feedback">
+                        <div *ngIf="f.airlineName.errors.required">Airport Name is required</div>
+                    </div>
+                </mat-form-field>
             </div>
             <div class="form-group col-5">
-                <label>Logo</label>
-                <input type="text" formControlName="airlineLogo" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.airlineLogo.errors }" />
-                <div *ngIf="submitted && f.airlineLogo.errors" class="invalid-feedback">
-                    <div *ngIf="f.airlineLogo.errors.required">Airline Logo is required</div>
-                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Logo</mat-label>
+                    <input type="text" formControlName="airlineLogo" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.airlineLogo.errors }" matInput
+                        placeholder="airlineLogo">
+                    <div *ngIf="submitted && f.airlineLogo.errors" class="invalid-feedback">
+                        <div *ngIf="f.airlineLogo.errors.required">Airport Logo is required</div>
+                    </div>
+                </mat-form-field>
             </div>
             <div class="form-group col-5">
-                <label>Status</label>
-                <select formControlName="status" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
-                    <option *ngFor="let i of statusArray" [ngValue]="i.id">{{i.name}}</option>
-                </select>
-                <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
-                    <div *ngIf="f.status.errors.required">status Logo is required</div>
-                </div>
+                <mat-form-field>
+                    <mat-select formControlName="status" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.status.errors }" placeholder="status">
+                        <mat-option *ngFor="let i of statusArray" [value]="i.id">
+                            {{i.name}}
+                        </mat-option>
+                    </mat-select>
+                    <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+                        <div *ngIf="f.status.errors.required">status is required</div>
+                    </div>
+                </mat-form-field>
             </div>
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary">
-                <span class="spinner-border spinner-border-sm mr-1"></span>
-                Save
-            </button>
+        <div class="form-group" style="display: table-cell;width: 490px;display: flex;">
+            <button mat-stroked-button color="primary">Save</button>
         </div>
     </form>
 </div>

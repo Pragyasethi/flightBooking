@@ -1,5 +1,6 @@
 export class Flight {
     flightId!: number;
+    airlineId!:string;
     airlineLogo!: string;
     airlineName!: string;
     flightNumber!: string;

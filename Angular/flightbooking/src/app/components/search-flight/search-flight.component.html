@@ -26,7 +26,7 @@
         </td>
         <td>{{flight.availableSeats}}</td>
         <td>{{flight.price}}</td>
-        <td><button type="button" [disabled]="flight.availableSeats<0" class="cncBtn btn btn-danger"
+        <td><button mat-stroked-button color="primary" type="button" [disabled]="flight.availableSeats<0" class="cncBtn btn btn-danger"
                 (click)="bookTicket(flight.flightId)">Book</button></td>
         </tr>
     </table>

@@ -29,7 +29,7 @@ export class AddAirportComponent implements OnInit {
         private commonService:CommonService) { }
 
     ngOnInit(): void {
-        this.statusArray = this.commonService.getArray();
+        this.statusArray = this.commonService.getStatusArray();
         this.id = this.route.snapshot.params['id'];
         this.isAddMode = !this.id;
 

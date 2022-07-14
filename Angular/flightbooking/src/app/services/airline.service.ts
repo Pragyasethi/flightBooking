@@ -29,20 +29,28 @@ export class AirlineService {
     return this.http.put(AIRLINE_API, airlineData, httpOptions);
   }
 
-  findAllActiveAirlines(){
+  findAllActiveAirlines() {
     return this.http.get(AIRLINE_API.concat('?search=status:1'));
   }
 
-  findAllAirlines(params:Params){
-    let url="";
+  findAllAirlines(params: Params) {
+    let url = "";
     const keys = Object.keys(params);
     keys.forEach(key => {
       let value = params[key];
-      if (value!==null || value!=='') {
-          url = url.concat(key).concat(':').concat(value).concat(',');
-        }
+      if (value !== null || value !== '') {
+        url = url.concat(key).concat(':').concat(value).concat(',');
       }
+    }
     )
     return this.http.get(AIRLINE_API.concat('?search=').concat(url));
+  }
+
+
+  getIdFromName(airlineArray: Airline[], name: string) {
+    let returnArray = airlineArray.filter((x) => {
+      return (name === x.airlineName)
+    });
+    return returnArray[0].airlineId;
   }
 }

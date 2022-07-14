@@ -13,8 +13,8 @@
             <td>{{airport.airportName}}</td>
             <td>{{airport.airportLocation}}</td>
             <td>
-                <button mat-button (click)="openDialog(airport)"> View </button>
-                <button type="button" (click)="editAirport(airport.airportId)">Edit</button>
+                <button mat-stroked-button color="primary" (click)="openDialog(airport)"> View </button>
+                <button mat-stroked-button color="primary" type="button" (click)="editAirport(airport.airportId)">Edit</button>
             </td>
         </tr>
     </table>

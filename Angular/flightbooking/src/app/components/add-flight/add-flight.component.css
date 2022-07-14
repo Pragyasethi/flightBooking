@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    /*margin-top: 5%; */
+
+}
+
+h1{
+    margin: auto; 
+    margin-left: 45%;
+    display: flex;
+
+} 
+
+.form-group{
+    margin: auto;
+    width: 70%; 
+    /* justify-content: center;
+    align-content: center; */
+    display: inline-block;
+     margin-left: 30%; 
+
+}
+
+.mat-form-field ~ .mat-form-field {
+    margin-left: 100px;
+  } 

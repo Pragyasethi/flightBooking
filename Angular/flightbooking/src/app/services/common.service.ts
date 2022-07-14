@@ -30,14 +30,37 @@ export class CommonService {
     },
   ];
 
+  scheduledForArray = [
+    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+  ];
+  // scheduledForArray = [
+  //   {name:'Monday'},{name:'Tuesday'},{name:'Wednesday'},{name:'Thursday'},{name:'Friday'}
+  //   ,{name:'Saturday'},{name:'Sunday'}
+  // ];
+
   getStatusIdFromName(name: string) {
     let returnArray = this.statusArray.filter((x) => {
-      return (name === x.name) 
+      return (name === x.name)
     });
     return returnArray[0].id;
   }
 
-  getArray() {
+  getStatusArray() {
     return this.statusArray;
   }
+  getSchedulerForArray() {
+    return this.scheduledForArray;
+  }
+
+  getScheduleForArrayFromString(scheduledfor: string) {
+    return scheduledfor.split(",");
+  }
+
+  getStringFromScheduleForArray(scheduledfor: any[]) {
+    return scheduledfor.toString();
+  }
+
+
+
+
 }

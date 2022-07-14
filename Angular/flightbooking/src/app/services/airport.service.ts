@@ -45,4 +45,12 @@ export class AirportService {
     return this.http.put(AIRPORT_API, airportData, httpOptions);
   }
 
+  
+  getIdFromLocation(airporArray: Airport[],locationName:string){
+    let returnArray = airporArray.filter((x) => {
+      return (locationName === x.airportLocation) 
+    });
+    return returnArray[0].airportId;
+  }
+
 }
