@@ -1,1 +1,10 @@
 /.metadata/
+
+
+\AWS\Applications
+\AWS\data
+!~\AWS\deployable
+
+/AWS/Applications
+/AWS/data
+!~/AWS/deployable
