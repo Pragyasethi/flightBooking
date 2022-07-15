@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { SearchBookingComponent } from './components/search-booking/search-booking.component';
 import { SearchFlightComponent } from './components/search-flight/search-flight.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //prefix,full
@@ -24,17 +25,19 @@ const routes: Routes = [
   { path: 'home', component: WelcomePageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin/flight', component: FlightComponent },
-  { path: 'admin/airport', component: AirportComponent },
-  { path: 'admin/airline', component: AirlineComponent },
-  { path: 'admin/flight/edit/:id', component: AddFlightComponent },
-  { path: 'admin/airport/edit/:id', component: AddAirportComponent },
-  { path: 'admin/airline/edit/:id', component: AddAirlineComponent },
-  { path: 'admin/flight/add', component: AddFlightComponent },
-  { path: 'admin/airport/add', component: AddAirportComponent },
-  { path: 'admin/airline/add', component: AddAirlineComponent },
-  { path: 'admin/home', component: WelcomePageComponent },
-  { path: '**', component: PagenotfoundComponent }
+  { path: 'admin/flight', component: FlightComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/airport', component: AirportComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/airline', component: AirlineComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/flight/edit/:id', component: AddFlightComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/airport/edit/:id', component: AddAirportComponent,canActivate:[AuthGuardService] },
+  { path: 'admin/airline/edit/:id', component: AddAirlineComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/flight/add', component: AddFlightComponent,canActivate:[AuthGuardService] },
+  { path: 'admin/airport/add', component: AddAirportComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/airline/add', component: AddAirlineComponent ,canActivate:[AuthGuardService]},
+  { path: 'admin/home', component: WelcomePageComponent,canActivate:[AuthGuardService] },
+  { path: '**', component: PagenotfoundComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
 ];
 
 @NgModule({
