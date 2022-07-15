@@ -1,0 +1,12 @@
+com\flightapp\commonmodule\model\ApiError.class
+com\flightapp\commonmodule\model\SearchCriteria.class
+com\flightapp\commonmodule\specifications\SpecificationBuilder.class
+com\flightapp\commonmodule\utility\SearchUtility.class
+com\flightapp\commonmodule\model\SearchCriteria$SearchCriteriaBuilder.class
+com\flightapp\commonmodule\utility\JsonUtil.class
+com\flightapp\commonmodule\constants\Constants.class
+com\flightapp\commonmodule\constants\StatusEnum.class
+com\flightapp\commonmodule\specifications\SpecificationBuilder$1.class
+com\flightapp\commonmodule\constants\QueryOperatorEnum.class
+com\flightapp\commonmodule\exceptions\ResourceNotFoundException.class
+com\flightapp\commonmodule\utility\CustomExceptionHandler.class
