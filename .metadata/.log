@@ -4495,3 +4495,6 @@ Caused by: java.net.SocketException: Connection reset
 	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
 	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
 	... 18 more
+
+!ENTRY org.eclipse.ui 2 2 2022-07-15 12:08:19.561
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
