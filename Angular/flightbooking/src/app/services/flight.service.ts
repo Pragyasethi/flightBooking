@@ -65,10 +65,12 @@ export class FlightService {
   }
 
   addFlight(flightData: Flight) {
+    console.log(flightData);
     return this.http.post(FLIGHT_API, flightData, httpOptions);
   }
 
   updateFlight(flightData: Flight) {
+    console.log(flightData);
     return this.http.put(FLIGHT_API, flightData, httpOptions);
   }
 

@@ -47,7 +47,7 @@ export class AddFlightComponent implements OnInit {
       destination: ['', Validators.required],
       price: ['', Validators.required],
       capacity: ['', Validators.required],
-      scheduledfor: ['', Validators.required],
+      scheduledFor: ['', Validators.required],
       arrivalTime: ['', Validators.required],
       departureTime: ['', Validators.required],
       status: ['', Validators.required]
@@ -62,6 +62,7 @@ export class AddFlightComponent implements OnInit {
         .pipe(first())
         .subscribe(
           (data: any) => {
+            console.log(data);
             this.form.patchValue({
               flightNumber: data[0].flightNumber,
               price: data[0].price,
@@ -69,7 +70,7 @@ export class AddFlightComponent implements OnInit {
               airlineId: this.airlineService.getIdFromName(this.airlineList, data[0].airlineName),
               source: this.airportService.getIdFromLocation(this.airportList, data[0].source),
               destination: this.airportService.getIdFromLocation(this.airportList, data[0].destination),
-              scheduledfor: this.commonService.getScheduleForArrayFromString(data[0].scheduledfor),
+              scheduledFor: this.commonService.getScheduleForArrayFromString(data[0].scheduledfor),
               departureTime: data[0].departureTime,
               arrivalTime: data[0].arrivalTime,
               status: this.commonService.getStatusIdFromName(data[0].status)
@@ -94,6 +95,9 @@ export class AddFlightComponent implements OnInit {
     }
   }
   private createAirline() {
+    console.log(this.form.value['scheduledFor']);
+    this.form.setControl('scheduledfor'
+    , new FormControl(this.commonService.getStringFromScheduleForArray(this.form.value['scheduledFor'])));
     this.flightService.addFlight(this.form.value)
       .subscribe({
         next: (res: any) => {
@@ -110,7 +114,7 @@ export class AddFlightComponent implements OnInit {
 
   private updateAirline() {
     this.form.setControl('scheduledfor'
-      , new FormControl(this.commonService.getStringFromScheduleForArray(this.form.value['scheduledfor'])));
+      , new FormControl(this.commonService.getStringFromScheduleForArray(this.form.value['scheduledFor'])));
     this.form.addControl('flightId', new FormControl(this.id));
     this.flightService.updateFlight(this.form.value)
       .subscribe({

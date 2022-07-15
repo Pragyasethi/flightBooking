@@ -75,12 +75,12 @@
             <div class="form-group">
                 <mat-form-field>
                     <mat-label>Scheduled For</mat-label>
-                    <mat-select type="checkbox" formControlName="scheduledfor" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.scheduledfor.errors }" multiple>
+                    <mat-select type="checkbox" formControlName="scheduledFor" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.scheduledFor.errors }" multiple>
                         <mat-option *ngFor="let day of scheduledForArray" [value]="day">{{day}}</mat-option>
                     </mat-select>
-                    <div *ngIf="submitted && f.scheduledfor.errors" class="invalid-feedback">
-                        <div *ngIf="f.scheduledfor.errors.required">scheduledfor is required</div>
+                    <div *ngIf="submitted && f.scheduledFor.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduledFor.errors.required">scheduledFor is required</div>
                     </div>
                 </mat-form-field>
 

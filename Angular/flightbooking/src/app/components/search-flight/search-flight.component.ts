@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { AirportService } from '../../services/airport.service';
 import { FlightService } from '../../services/flight.service';
 
@@ -19,7 +19,7 @@ export class SearchFlightComponent implements OnInit {
 
 
   constructor(private router: Router, private flightService: FlightService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,private datepipe:DatePipe) {
 
   }
 
@@ -31,8 +31,9 @@ export class SearchFlightComponent implements OnInit {
   }
 
   bookTicket(flightId: number) {
+    const transformedvalue = this.datepipe.transform(this.departureDate, 'dd-MM-yyyy');
     this.router.navigate(['/bookflight'],
-      { queryParams: { id: flightId, date: (localStorage.getItem('date')) } }
+      { queryParams: { id: flightId, date: transformedvalue} }
     );
   }
 

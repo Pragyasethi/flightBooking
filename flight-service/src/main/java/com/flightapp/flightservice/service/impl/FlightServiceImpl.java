@@ -14,6 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.flightapp.commonmodule.constants.StatusEnum;
 import com.flightapp.commonmodule.model.SearchCriteria;
 import com.flightapp.commonmodule.specifications.SpecificationBuilder;
+import com.flightapp.flightservice.dto.AirportRequest;
 import com.flightapp.flightservice.dto.FlightRequest;
 import com.flightapp.flightservice.dto.FlightResponse;
 import com.flightapp.flightservice.dto.InventoryResponse;
@@ -124,11 +125,28 @@ public class FlightServiceImpl implements FlightService {
 		if (!airlineRepository.existsById(flightRequest.getAirlineIdAsLong())) {
 			throw new ResourceNotFoundException("Airline with id " + flightRequest.getAirlineId() + " not found");
 		}
-		Flight updatedFlight = flightRepository.findById(flightRequest.getIdAsLong())
-				.map(flight -> flightRepository.save(mapToModel(flightRequest)))
+
+		Flight fetchedFlight = flightRepository.findById(flightRequest.getIdAsLong()).orElseThrow(
+				() -> new ResourceNotFoundException("Flight Details not found for id: " + flightRequest.getId()));
+		Airline airline = airlineRepository.findById(flightRequest.getAirlineIdAsLong())
 				.orElseThrow(() -> new ResourceNotFoundException(
-						"Flight Details not found for id: " + flightRequest.getId()));
-		return mapToDto(updatedFlight);
+						"Airline with id " + flightRequest.getAirlineId() + " Not found to add Flight Details "));
+		fetchedFlight.setAirline(airline);
+		flightRepository.save(mapToModel(flightRequest,fetchedFlight));
+		return mapToDto(fetchedFlight);
+	}
+
+	private Flight mapToModel(FlightRequest flightRequest, Flight flight) {
+		flight.setFlightNumber(flightRequest.getFlightNumber());
+		flight.setPrice(flightRequest.getPrice());
+		flight.setCapacity(Integer.parseInt(flightRequest.getCapacity()));
+		flight.setStatus(flight.getStatus());
+		flight.setArrTime(flightRequest.getArrTime());
+		flight.setDeptTime(flightRequest.getDeptTime());
+		flight.setSource(flightRequest.getSource());
+		flight.setDestination(flightRequest.getDestination());
+		flight.setScheduledfor(flightRequest.getScheduledfor());
+		return flight;
 	}
 
 	@Override
@@ -156,7 +174,7 @@ public class FlightServiceImpl implements FlightService {
 							.queryParam("departureDate", date).queryParam("flightId", flightIds).build())
 					.retrieve().bodyToMono(InventoryResponse[].class).block();
 
-			if (inventoryResponseList!=null && inventoryResponseList.length>0) {
+			if (inventoryResponseList != null && inventoryResponseList.length > 0) {
 				for (FlightResponse flightResponse : flightResponseList) {
 					for (InventoryResponse inventoryResponse : inventoryResponseList) {
 						if (Objects.equals(flightResponse.getFlightId(), inventoryResponse.getFlightId())) {

@@ -3,7 +3,7 @@ import {  Injectable, Output } from '@angular/core';
 import { Params } from '@angular/router';
 import { Airport } from '../models/airport';
 
-const AIRPORT_API = 'http://localhost:8090/api/booking/airport';
+const AIRPORT_API = 'http://localhost:8090/api/airport';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,7 +17,8 @@ export class AirportService {
   constructor(private http:HttpClient) { }
 
   findAllActiveAirports(){
-    return this.http.get(AIRPORT_API.concat('?search=status:1'));
+    let host="http://localhost:8090/api/booking/airport"
+    return this.http.get(host.concat('?search=status:1'));
   }
 
   findAllAirports(params:Params){
