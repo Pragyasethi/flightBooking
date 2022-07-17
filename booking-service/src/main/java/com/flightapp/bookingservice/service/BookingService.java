@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.flightapp.bookingservice.dto.BookingRequestDto;
 import com.flightapp.bookingservice.dto.BookingResponseDto;
-import com.flightapp.commonmodule.model.SearchCriteria;
+import com.flightapp.bookingservice.utility.SearchCriteria;
 
 public interface BookingService {
 	

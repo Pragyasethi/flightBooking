@@ -20,8 +20,8 @@ import com.flightapp.bookingservice.dto.BookingRequestDto;
 import com.flightapp.bookingservice.dto.BookingResponseDto;
 import com.flightapp.bookingservice.dto.CommonResponse;
 import com.flightapp.bookingservice.service.BookingService;
-import com.flightapp.commonmodule.utility.JsonUtil;
-import com.flightapp.commonmodule.utility.SearchUtility;
+import com.flightapp.bookingservice.utility.JsonUtil;
+import com.flightapp.bookingservice.utility.SearchUtility;
 
 import lombok.RequiredArgsConstructor;
 

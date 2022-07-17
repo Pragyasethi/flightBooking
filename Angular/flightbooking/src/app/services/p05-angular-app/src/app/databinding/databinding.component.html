@@ -1,0 +1,14 @@
+<h1>
+    Welcome {{name}}
+</h1>
+
+Name: <input placeholder="Enter your name" #enteredName/>
+<button (click)="updateName(enteredName.value)"> Submit</button>
+
+<!-- for getting default value from class -->
+<!-- Name: <input [value]="name" placeholder="Enter your name" #enteredName/>
+<button (click)="updateName(enteredName.value)"> Submit</button> -->
+
+<!-- for getting value updated in Welcome string as we insert the data
+Name: <input [value]="name" placeholder="Enter your name" #enteredName (keyup)="updateName(enteredName.value)"/>
+<button (click)="updateName(enteredName.value)"> Submit</button> -->

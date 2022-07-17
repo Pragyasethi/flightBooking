@@ -12,10 +12,9 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-    if (!!this.tokenservice.getUser()  || !!this.tokenservice.getUser().roles.includes('ROLE_ADMIN')) {
+    if (!this.tokenservice.getUser()  || !this.tokenservice.getUser().roles.includes('ROLE_ADMIN')) {
       alert('You are not allowed to view this page. You are redirected to home Page');
       
-      console.log(route.url);
       this.router.navigate(["/home"], { queryParams: { retUrl: route.url } });
       return false;   
     }

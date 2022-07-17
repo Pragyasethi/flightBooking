@@ -11,10 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.flightapp.commonmodule.constants.StatusEnum;
-import com.flightapp.commonmodule.model.SearchCriteria;
-import com.flightapp.commonmodule.specifications.SpecificationBuilder;
-import com.flightapp.flightservice.dto.AirportRequest;
+import com.flightapp.flightservice.constants.StatusEnum;
 import com.flightapp.flightservice.dto.FlightRequest;
 import com.flightapp.flightservice.dto.FlightResponse;
 import com.flightapp.flightservice.dto.InventoryResponse;
@@ -26,6 +23,8 @@ import com.flightapp.flightservice.repository.AirlineRepository;
 import com.flightapp.flightservice.repository.AirportRepository;
 import com.flightapp.flightservice.repository.FlightRepository;
 import com.flightapp.flightservice.service.FlightService;
+import com.flightapp.flightservice.specifications.SpecificationBuilder;
+import com.flightapp.flightservice.utility.SearchCriteria;
 
 import lombok.RequiredArgsConstructor;
 

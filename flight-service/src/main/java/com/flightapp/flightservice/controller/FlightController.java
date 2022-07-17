@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flightapp.commonmodule.utility.SearchUtility;
 import com.flightapp.flightservice.dto.FlightRequest;
 import com.flightapp.flightservice.dto.FlightResponse;
 import com.flightapp.flightservice.exceptions.ResourceNotFoundException;
 import com.flightapp.flightservice.service.FlightService;
+import com.flightapp.flightservice.utility.SearchUtility;
 
 import lombok.RequiredArgsConstructor;
 

@@ -62,7 +62,6 @@ export class AddFlightComponent implements OnInit {
         .pipe(first())
         .subscribe(
           (data: any) => {
-            console.log(data);
             this.form.patchValue({
               flightNumber: data[0].flightNumber,
               price: data[0].price,
@@ -135,7 +134,6 @@ export class AddFlightComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           this.airlineList = res;
-          console.log(this.airlineList);
         },
         error: (e) => {
           console.log(e);
@@ -149,7 +147,6 @@ export class AddFlightComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           this.airportList = res;
-          console.log(this.airlineList);
         },
         error: (e) => {
           console.log(e);

@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.flightapp.commonmodule.model.SearchCriteria;
 import com.flightapp.flightservice.dto.FlightRequest;
 import com.flightapp.flightservice.dto.FlightResponse;
 import com.flightapp.flightservice.exceptions.ResourceNotFoundException;
 import com.flightapp.flightservice.model.Flight;
+import com.flightapp.flightservice.utility.SearchCriteria;
 
 public interface FlightService {
 

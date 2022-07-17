@@ -21,7 +21,7 @@ export class FlightService {
   
   /*for user view */
   searchActiveFlights(params: Params) {
-    let host = "http://localhost:8090/api/booking/flight?departureDate=";
+    let host = FLIGHT_API+"?departureDate=";
     let searchUrl = '&search=';
     const keys = Object.keys(params);
     keys.forEach(key => {
@@ -37,7 +37,6 @@ export class FlightService {
         }
       }
     })
-    console.log('url is ' + searchUrl);
     return this.http.get(host.concat(searchUrl).concat('status:1'));
 
   }
@@ -65,12 +64,10 @@ export class FlightService {
   }
 
   addFlight(flightData: Flight) {
-    console.log(flightData);
     return this.http.post(FLIGHT_API, flightData, httpOptions);
   }
 
   updateFlight(flightData: Flight) {
-    console.log(flightData);
     return this.http.put(FLIGHT_API, flightData, httpOptions);
   }
 

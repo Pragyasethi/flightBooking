@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.flightapp.commonmodule.constants.Constants;
+import com.flightapp.inventoryservice.constants.Constants;
 import com.flightapp.inventoryservice.dto.InventoryRequest;
 import com.flightapp.inventoryservice.dto.InventoryResponse;
 import com.flightapp.inventoryservice.model.Inventory;

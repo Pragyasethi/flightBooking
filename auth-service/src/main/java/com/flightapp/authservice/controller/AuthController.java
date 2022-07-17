@@ -41,13 +41,11 @@ public class AuthController {
 
 		String jwt = jwtUtil.generateToken(userDetails);
 
-	    List<String> roles = userDetails.getAuthorities().stream()
-	            .map(GrantedAuthority::getAuthority)
-	            .collect(Collectors.toList());
+//	    List<String> roles = userDetails.getAuthorities().stream()
+//	            .map(GrantedAuthority::getAuthority)
+//	            .collect(Collectors.toList());
 
-	        return ResponseEntity.ok(new AuthResponse(jwt, 
-	                             userDetails.getUsername(), 
-	                             roles));
+	        return ResponseEntity.ok(new AuthResponse(jwt));
 
 	}
 

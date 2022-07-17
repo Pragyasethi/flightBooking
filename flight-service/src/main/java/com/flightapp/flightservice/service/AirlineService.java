@@ -6,9 +6,9 @@ import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 
-import com.flightapp.commonmodule.model.SearchCriteria;
 import com.flightapp.flightservice.dto.AirlineRequest;
 import com.flightapp.flightservice.dto.AirlineResponse;
+import com.flightapp.flightservice.utility.SearchCriteria;
 
 public interface AirlineService {
 

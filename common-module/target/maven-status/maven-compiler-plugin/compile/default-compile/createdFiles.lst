@@ -1,4 +1,5 @@
 com\flightapp\commonmodule\model\ApiError.class
+com\flightapp\commonmodule\CommonServiceApplication.class
 com\flightapp\commonmodule\model\SearchCriteria.class
 com\flightapp\commonmodule\specifications\SpecificationBuilder.class
 com\flightapp\commonmodule\utility\SearchUtility.class

@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.flightapp.bookingservice.constants.Constants;
+import com.flightapp.bookingservice.constants.StatusEnum;
 import com.flightapp.bookingservice.dto.BookingRequestDto;
 import com.flightapp.bookingservice.dto.BookingResponseDto;
 import com.flightapp.bookingservice.dto.CommonResponse;
@@ -20,10 +22,8 @@ import com.flightapp.bookingservice.model.Booking;
 import com.flightapp.bookingservice.model.PassengerDetails;
 import com.flightapp.bookingservice.repository.BookingRepository;
 import com.flightapp.bookingservice.service.BookingService;
-import com.flightapp.commonmodule.constants.Constants;
-import com.flightapp.commonmodule.constants.StatusEnum;
-import com.flightapp.commonmodule.model.SearchCriteria;
-import com.flightapp.commonmodule.specifications.SpecificationBuilder;
+import com.flightapp.bookingservice.specifications.SpecificationBuilder;
+import com.flightapp.bookingservice.utility.SearchCriteria;
 
 import lombok.RequiredArgsConstructor;
 

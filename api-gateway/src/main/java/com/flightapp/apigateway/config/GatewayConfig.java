@@ -28,7 +28,8 @@ public class GatewayConfig {
 						.filters(f -> f.filter(filter).dedupeResponseHeader("Access-Control-Allow-Origin", "RETAIN_LAST")).uri("lb://inventory-service"))
 				.route("flight-service",r ->r.path("/api/flight/**","/api/airline/**","/api/airport/**")
 						.filters(f -> f.filter(filter).dedupeResponseHeader("Access-Control-Allow-Origin", "RETAIN_LAST")).uri("lb://flight-service"))
-
+				.route("api-gateway",r ->r.path("/api/api-gateway/**")
+						.filters(f -> f.filter(filter).dedupeResponseHeader("Access-Control-Allow-Origin", "RETAIN_LAST")).uri("lb://api-gateway"))
 				.build();
 	}
 	

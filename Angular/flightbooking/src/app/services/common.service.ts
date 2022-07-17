@@ -57,7 +57,6 @@ export class CommonService {
   }
 
   getStringFromScheduleForArray(scheduledforArray: any[]) {
-    console.log(scheduledforArray.toString);
     return scheduledforArray.toString();
   }
 

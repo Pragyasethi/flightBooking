@@ -8,9 +8,7 @@ import javax.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.flightapp.commonmodule.constants.StatusEnum;
-import com.flightapp.commonmodule.model.SearchCriteria;
-import com.flightapp.commonmodule.specifications.SpecificationBuilder;
+import com.flightapp.flightservice.constants.StatusEnum;
 import com.flightapp.flightservice.dto.AirlineRequest;
 import com.flightapp.flightservice.dto.AirlineResponse;
 import com.flightapp.flightservice.exceptions.ResourceNotFoundException;
@@ -18,6 +16,8 @@ import com.flightapp.flightservice.model.Airline;
 import com.flightapp.flightservice.repository.AirlineRepository;
 import com.flightapp.flightservice.service.AirlineService;
 import com.flightapp.flightservice.service.FlightService;
+import com.flightapp.flightservice.specifications.SpecificationBuilder;
+import com.flightapp.flightservice.utility.SearchCriteria;
 
 import lombok.RequiredArgsConstructor;
 

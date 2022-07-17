@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flightapp.commonmodule.utility.SearchUtility;
 import com.flightapp.flightservice.dto.AirportRequest;
 import com.flightapp.flightservice.dto.AirportResponse;
 import com.flightapp.flightservice.service.AirportService;
+import com.flightapp.flightservice.utility.SearchUtility;
 
 import lombok.RequiredArgsConstructor;
 

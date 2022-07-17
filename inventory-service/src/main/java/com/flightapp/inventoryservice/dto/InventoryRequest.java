@@ -5,8 +5,8 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.flightapp.inventoryservice.constants.Constants;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.flightapp.commonmodule.constants.Constants;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

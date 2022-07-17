@@ -19,15 +19,15 @@
             <mat-label>DepartureDate</mat-label>
             <input matInput [readonly]="true" formControlName="departureDate" type="text" #departureDate required />
         </mat-form-field>
-        <mat-form-field appearance="outline" class="width-1">
-            <mat-label>flightId</mat-label>
-            <input matInput [readonly]="true" formControlName="flightId" type="text" #flightId />
-        </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="width-1">
             <mat-label>No. of Passengers</mat-label>
             <input maxlength="1" matInput formControlName="noOfSeats" placeholder="number of persons on board"
-                (input)="inputTotal(noOfSeats.value)" #noOfSeats required />
+            (input)="inputTotal(noOfSeats.value)" #noOfSeats required />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="invisible">
+            <mat-label>flightId</mat-label>
+            <input matInput [readonly]="true" formControlName="flightId" type="text" #flightId />
         </mat-form-field>
         <br>
 

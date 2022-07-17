@@ -32,7 +32,6 @@ export class AirlineComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           this.airlineList = res;
-          console.log(this.airlineList);
         },
         error: (e) => {
           console.log(e);
@@ -44,7 +43,6 @@ export class AirlineComponent implements OnInit {
     this.router.navigate(['/admin/airline/edit/'+id]);
 
   }
-
 
 
 }

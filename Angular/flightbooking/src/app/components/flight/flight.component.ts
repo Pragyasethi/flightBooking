@@ -33,7 +33,6 @@ export class FlightComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           this.flightList = res;
-          console.log(this.flightList);
         },
         error: (e) => {
           console.log(e);

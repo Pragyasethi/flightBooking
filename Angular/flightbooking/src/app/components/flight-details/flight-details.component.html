@@ -16,6 +16,10 @@
     <h3>ScheduledFor</h3>
     <p>{{data.scheduledfor}}</p>
 
+    <h3>Status</h3>
+    <p [style.color]="data.status==='Active'?'green':'red'">{{data.status}}</p>
+
+
   </div>
 
   <div class="pull-right">
@@ -31,8 +35,6 @@
     <h3>Price</h3>
     <p>{{data.price}}</p>
 
-    <h3>Status</h3>
-    <p [style.color]="data.status==='Active'?'green':'red'">{{data.status}}</p>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

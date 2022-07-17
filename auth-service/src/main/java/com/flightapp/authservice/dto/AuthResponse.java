@@ -16,7 +16,7 @@ public class AuthResponse {
 //	@Builder.Default
 //	private String type = "Bearer";
 //	private Long id;
-	private String username;
-//	private String email;
-	private List<String> roles;
+//	private String username;
+////	private String email;
+//	private List<String> roles;
 }

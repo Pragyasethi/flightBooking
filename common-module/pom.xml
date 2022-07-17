@@ -12,7 +12,9 @@
 	<artifactId>common-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Common Module</name>
+	<packaging>jar</packaging>
 	<description>common Module</description>
+	<url>http://maven.apache.org</url>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -44,6 +46,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

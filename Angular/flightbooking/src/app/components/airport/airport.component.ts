@@ -33,7 +33,6 @@ export class AirportComponent implements OnInit {
       .subscribe({
         next: (res: any) => {
           this.airportList = res;
-          console.log(this.airportList);
         },
         error: (e) => {
           console.log(e);

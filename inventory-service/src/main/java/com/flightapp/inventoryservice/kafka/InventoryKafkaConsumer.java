@@ -3,9 +3,9 @@ package com.flightapp.inventoryservice.kafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import com.flightapp.commonmodule.utility.JsonUtil;
 import com.flightapp.inventoryservice.dto.InventoryRequest;
 import com.flightapp.inventoryservice.service.InventoryService;
+import com.flightapp.inventoryservice.utility.JsonUtil;
 
 import lombok.RequiredArgsConstructor;
 

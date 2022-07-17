@@ -41,7 +41,7 @@ public class JwtUserDetailsService implements UserDetailsService{
 	
 	public ResponseEntity<?> saveUserDetails(AuthRequest authRequest) {
         //do validation if user already exists
-		if (userRepository.existsByUsername(authRequest.getUsername())) {
+		if (Boolean.TRUE.equals(userRepository.existsByUsername(authRequest.getUsername()))) {
 		      return ResponseEntity
 		          .badRequest()
 		          .body(new MessageResponse("Error: Username is already taken!"));

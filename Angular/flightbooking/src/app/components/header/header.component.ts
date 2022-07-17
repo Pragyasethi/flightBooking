@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
       const user = this.tokenService.getUser();
       this.roles = user.roles;
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+
       this.username = user.username;
     }
     

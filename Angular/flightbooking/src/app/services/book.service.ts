@@ -17,7 +17,6 @@ export class BookService {
 
 
   createBooking(bookingDetails:Booking){
-    console.log(bookingDetails);
     // let headers =new HttpHeaders();
     // headers.append("Content-Type","application/json");
     // headers.append("Accept","*/*");
@@ -34,7 +33,6 @@ export class BookService {
         findBookingHost = findBookingHost.concat(key).concat(':').concat(value).concat(',');
       }
     })
-    console.log('url is ' + findBookingHost);
     return this.http.get(findBookingHost);
   }
 

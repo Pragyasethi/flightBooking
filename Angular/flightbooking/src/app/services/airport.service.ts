@@ -17,8 +17,7 @@ export class AirportService {
   constructor(private http:HttpClient) { }
 
   findAllActiveAirports(){
-    let host="http://localhost:8090/api/booking/airport"
-    return this.http.get(host.concat('?search=status:1'));
+    return this.http.get(AIRPORT_API.concat('?search=status:1'));
   }
 
   findAllAirports(params:Params){
