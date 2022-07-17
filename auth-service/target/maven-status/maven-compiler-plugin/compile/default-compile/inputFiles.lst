@@ -1,0 +1,10 @@
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\AuthServiceApplication.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\repository\UserRoleDetailsRepository.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\config\SecurityConfiguration.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\controller\AuthController.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\dto\AuthResponse.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\service\JwtUserDetailsService.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\dto\AuthRequest.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\dto\MessageResponse.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\util\JwtUtil.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\auth-service\src\main\java\com\flightapp\authservice\model\UserRoleDetails.java

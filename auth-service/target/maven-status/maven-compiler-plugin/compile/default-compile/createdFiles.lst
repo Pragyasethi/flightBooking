@@ -1,0 +1,12 @@
+com\flightapp\authservice\util\JwtUtil.class
+com\flightapp\authservice\repository\UserRoleDetailsRepository.class
+com\flightapp\authservice\service\JwtUserDetailsService.class
+com\flightapp\authservice\AuthServiceApplication.class
+com\flightapp\authservice\dto\MessageResponse.class
+com\flightapp\authservice\model\UserRoleDetails$UserRoleDetailsBuilder.class
+com\flightapp\authservice\config\SecurityConfiguration.class
+com\flightapp\authservice\dto\AuthRequest.class
+com\flightapp\authservice\dto\AuthResponse$AuthResponseBuilder.class
+com\flightapp\authservice\dto\AuthResponse.class
+com\flightapp\authservice\controller\AuthController.class
+com\flightapp\authservice\model\UserRoleDetails.class

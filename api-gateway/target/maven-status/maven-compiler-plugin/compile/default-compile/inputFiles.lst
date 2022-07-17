@@ -1,0 +1,12 @@
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\config\GatewayConfig.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\swagger\SwaggerProvider.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\ApiGatewayApplication.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\swagger\SwaggerConfig.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\util\RouterValidator.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\filter\JwtAuthenticationFilter.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\config\ApiGatewayPropertiesConfig.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\util\JwtUtil.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\exception\JwtTokenMissingException.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\exception\JwtTokenMalformedException.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\swagger\SwaggerHandler.java
+C:\Users\cogjava1573\Documents\p00-FlightBooking\api-gateway\src\main\java\com\flightapp\apigateway\filter\AuthenticationFilter.java

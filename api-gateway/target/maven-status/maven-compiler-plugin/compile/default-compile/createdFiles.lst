@@ -1,0 +1,10 @@
+com\flightapp\apigateway\swagger\SwaggerConfig.class
+com\flightapp\apigateway\util\JwtUtil.class
+com\flightapp\apigateway\exception\JwtTokenMalformedException.class
+com\flightapp\apigateway\swagger\SwaggerHandler.class
+com\flightapp\apigateway\config\GatewayConfig.class
+com\flightapp\apigateway\exception\JwtTokenMissingException.class
+com\flightapp\apigateway\ApiGatewayApplication.class
+com\flightapp\apigateway\filter\AuthenticationFilter.class
+com\flightapp\apigateway\util\RouterValidator.class
+com\flightapp\apigateway\swagger\SwaggerProvider.class
